@@ -1,7 +1,7 @@
 
 const HMConstants = require('../config/HMConstants');
 const logger = require('../config/HMLogger');
-const mySQL = require('mySQL');
+const mySQL = require('mysql');
 
 var con = mySQL.createConnection({
   host: HMConstants.Sql.MS_HOST,

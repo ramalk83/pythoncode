@@ -18,16 +18,16 @@
 
 <body>
 
-    <!-- #header -->
-    <header id="header" class="header header-hide">
-        <div class="container">
-            <div id="logo" class="pull-left">
-                <h1><a href="/" class="scrollto"><span>codePannu</span></a></h1>
-            </div>
-            <div style="float:right; padding:5px; font-size:30px">
-                <a href="/"><i class="fa fa-home"></i></a></div>
-        </div>
-    </header><!-- #header -->
+	<!-- #header -->
+	<header id="header" class="header header-hide">
+		<div class="container">
+			<div id="logo" class="pull-left">
+				<h1><a href="/" class="scrollto"><span>codePannu</span></a></h1>
+			</div>
+			<div style="float:right; padding:5px; font-size:30px">
+				<a href="/"><i class="fa fa-home"></i></a></div>
+		</div>
+	</header><!-- #header -->
 
 
 
@@ -171,56 +171,27 @@
 					.then((res) => res.json())
 					.then((data) => {
 						console.log(data);
-						var isCaptchaValidated = data.sucess;
+						var isCaptchaValidated = data.success;
 						console.log(isCaptchaValidated);
 						if (isCaptchaValidated == true) {
-							var remote = $.ajax({
-								url: '/assignments',
-								type: 'post',
-								async: false,
-								dataType: 'application/json',
-								data: $("#assignment-details").serialize()
-							}).responseText;
-							console.log(remote)
-							if (remote == 'OK') {
-								alert('Thank you for submitting assignment')
-								// $(#confirmation).show();
-								// $("#confirmation").css("display", "block");
-							}
-							else {
-								alert('unable to submit assignment')
-								// $("#confirmation").css("display", "block");
-								// window.location.reload();
-							}
-
+							fetch('/assignments', {
+								method: 'POST',
+								headers: {
+									'Accept': 'application/json, text/plain, */*',
+									'Content-type': 'application/JSON'
+								},
+								body: JSON.stringify({ name: name, email: email, level: level, day: day, answer1: answer1})
+							})
+								.then((res) => res.json())
+								.then((data1) => {
+									console.log(data1);
+									window.location.replace(data1.url);
+								})
 						}
-						else{
+						else {
 							$("#confirmation").css("display", "block");
 						}
 					})
-
-
-
-
-
-				//do your own request an handle the results
-				// $.ajax({
-				// 	url: '/assignments',
-				// 	type: 'post',
-				// 	dataType: 'application/json',
-				// 	data: $("#assignment-details").serialize(),
-				// 	success: function (data) {
-				// 		console.log(data)
-				// 	}
-				// });
-				// alert('You assignment has been submitted successfully');
-				// document.getElementById('name').value = ''
-				// document.getElementById('email').value = ''
-				// document.getElementById('level').value = ''
-				// document.getElementById('day').value = ''
-				// document.getElementById('answer1').value = ''
-				// document.getElementById('answer2').value = ''
-				// document.getElementById('answer3').value = ''
 			});
 		}
 

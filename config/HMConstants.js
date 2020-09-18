@@ -21,7 +21,7 @@ hmc(
 
     // mysql database related
     Sql: {
-      MS_PORT: 3001,
+      MS_PORT: 3306,
       MS_HOST: "localhost",
       MS_USER: "root",
       MS_PASS: "test",

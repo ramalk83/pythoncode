@@ -10,6 +10,8 @@ const PORT = 3000;
 // const sampleRoutes = require('./routes/sampleRoutes');
 
 
+
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ type: 'application/*+json' }));
@@ -23,7 +25,6 @@ app.set('view engine', 'ejs');
 app.get('/', function (req, res) {
     res.render(__dirname + '/views/index');
 });
-
 
 app.get('/assignments', function (req, res) {
     res.render(__dirname + '/views/assignments');
@@ -40,6 +41,10 @@ app.get('/python-courses', function (req, res) {
 
 app.get('/recaptcha', function (req, res) {
   res.render(__dirname + '/views/recaptcha');
+});
+
+app.get('/thankyou', function (req, res) {
+  res.render(__dirname + '/views/thankyou');
 });
 
 app.get('/list-assignments', function (req, res) {
@@ -66,9 +71,9 @@ body=JSON.parse(body)
 // console.log(body)
 if(body.success!==undefined && !body.success){
 
-  return res.json({'sucess':false,'msg':'failed capcha verification'})
+  return res.json({'success':false,'msg':'failed capcha verification'})
 }
-return res.json({'sucess':true,'msg':'capcha verified'})
+return res.json({'success':true,'msg':'capcha verified'})
 })
 
 })
@@ -89,10 +94,12 @@ app.post('/message', async (req, res) => {
       logger.debug("valid object")
       try {
         sqlDS.createMessage(messageObj).then(
+          
           function (result) {
             logger.debug("******************* Exited Routes Successfully ********************************");
-            // res.status(HMConstants.Response.CODE_SUCCESS).send(HMConstants.Response.CODE_SUCCESS);
-            res.sendStatus(HMConstants.Response.CODE_SUCCESS)
+            res.status(HMConstants.Response.CODE_SUCCESS).send(HMConstants.Response.CODE_SUCCESS);
+
+            // res.sendStatus(HMConstants.Response.CODE_SUCCESS)
           }
         ).catch(function (err) {
           logger.error("Promise rejection error: " + err.stack);
@@ -125,8 +132,11 @@ app.post('/message', async (req, res) => {
         sqlDS.createAssignment(assignmentObj).then(
           function (result) {
             logger.debug("******************* Exited Routes Successfully ********************************");
-            logger.debug(HMConstants.Response.CODE_SUCCESS)
-            res.sendStatus(HMConstants.Response.CODE_SUCCESS)
+            // logger.debug(HMConstants.Response.CODE_SUCCESS)
+            // res.sendStatus(HMConstants.Response.CODE_SUCCESS)
+            // res.redirect(__dirname + '/views/thankyou');
+            return (res.json({'status':200, 'url':'/thankyou'}))
+            // return res.send({status:200, result: 'redirect', url:__dirname + '\\views\\thankyou'})
           }
         ).catch(function (err) {
           logger.error("Promise rejection error: " + err.stack);
@@ -172,8 +182,12 @@ app.post('/message', async (req, res) => {
     }
   });
 
+app.use(function (req, res) {
+  res.render(__dirname + '/views/error');
+});
 
 app.listen(PORT, () => {
     console.log("Node Server started at " + PORT + ", waiting for requests....");
+
 
 });

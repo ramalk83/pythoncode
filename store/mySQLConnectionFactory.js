@@ -13,7 +13,8 @@ var pool = mySQL.createPool({
   host: HMConstants.Sql.MS_HOST,
   user: HMConstants.Sql.MS_USER,
   password: HMConstants.Sql.MS_PASS,
-  database: HMConstants.Sql.MS_DB_SCHEMA
+  database: HMConstants.Sql.MS_DB_SCHEMA,
+  port: HMConstants.Sql.MS_DB_PORT,
 });
 
 exports.getSQLConnection = function (err) {

@@ -14,6 +14,19 @@
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"> -->
 	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-179069335-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'UA-179069335-1');
+	</script>
+
+
+
 </head>
 
 <body>
@@ -101,7 +114,7 @@
 						<label for='click' class='fa fa-times'></label>
 					</a>
 				</div>
-				<div class='modal-check-text' >
+				<div class='modal-check-text'>
 					<span style="text-align: center;"> Please click on the check box</span>
 					<div class='div-line'></div>
 					<br>
@@ -160,7 +173,7 @@
 									'Accept': 'application/json, text/plain, */*',
 									'Content-type': 'application/JSON'
 								},
-								body: JSON.stringify({ name: name, email: email, level: level, day: day, answer1: answer1})
+								body: JSON.stringify({ name: name, email: email, level: level, day: day, answer1: answer1 })
 							})
 								.then((res) => res.json())
 								.then((data1) => {

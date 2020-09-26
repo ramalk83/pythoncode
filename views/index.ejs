@@ -12,6 +12,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 	<link rel="stylesheet" href="assets/css/main.css" />
+	<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /> -->
 	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 </head>
 
@@ -29,8 +30,8 @@
 
 	<!-- Banner -->
 	<section id="banner">
-		<h2>We make <strong>Coding</strong> easy and fun for school students</h2>
-		<p>Check out our free python courses</p>
+		<h2><strong>We make Coding easy and fun for school students</strong></h2>
+		<p><strong>Check out our free python courses</strong></p>
 		<a href="python-courses" class="button special">Know more</a>
 	</section>
 
@@ -42,33 +43,32 @@
 			</header>
 			<div class="features">
 				<div class="feature">
-					<i class="fa fa-diamond"></i>
+					<i class="fa fa-laptop"></i>
 					<h3>Python Courses</h3>
 					<p>We provide 7 day courses in python. The courses are free for all students. <a href="python-courses#two"><b>Click
 								here</b></a> to know more</p>
 				</div>
 				<div class="feature">
-					<i class="fa fa-envelope-o"></i>
+					<i class="fa fa-bullhorn"></i>
 					<h3>How it works</h3>
 					<p>Simple three step process to learn, practise and get support. <a href="python-courses#one"><b>Click here</b></a> to know more</p>
 				</div>
 				<div class="feature">
-					<i class="fa fa-copy"></i>
+					<i class="fa fa-cloud-upload"></i>
 					<h3>Submit assignments</h3>
 					<p>We try our best to correct assignments submitted by all our students. <a
 							href="assignments"><b>Click here</b></a> to submit your assignments</p>
 				</div>
 				<div class="feature">
-					<i class="fa fa-paper-plane-o"></i>
-					<h3>About Us</h3>
-					<p>Our mission is to introduce school students to coding and create next generation tech entrepreneurs
+					<i class="fa fa-info-circle"></i>
+					<h3>What we do</h3>
+					<p>Our mission is to introduce school students to coding as a fun and exciting activity
 						. <a href="aboutUs"><b>Click here</b></a> to read more</p>
 				</div>
 				<div class="feature">
-					<i class="fa fa-save"></i>
+					<i class="fa fa-users"></i>
 					<h3>Our Team</h3>
-					<p>Our mission is to introduce school students to coding and create next generation tech entrepreneurs
-						. <a href="aboutUs#two"><b>Click here</b></a> to read more</p>
+					<p>We are experienced techiies who want to create next generation tech entrepreneurs. <a href="aboutUs#two"><b>Click here</b></a> to know us</p>
 				</div>
 			</div>
 		</div>
@@ -98,14 +98,14 @@
 				</ul>
 			</form>
 
-			<div id='confirmation' class='modal'>
-				<div class='modal-header'>
+			<div id='confirmation' class='modal-confirmation'>
+				<div class='modal-confirmation-header'>
 					<h6> Confirmation</h6>
 					<a href="#" onClick='closeModal()'>
 						<label for='click' class='fa fa-times'></label>
 					</a>
 				</div>
-				<div class='modal-text'>
+				<div class='modal-confirmation-text'>
 					<span> Your message has been sent successfully</span>
 					<div class='div-line'></div>
 					<!-- <label for='click' class='close-btn' onClick='closeModal()'>Close window</label> -->
@@ -167,10 +167,7 @@
 					// 	alert(data)
 					// }
 				}).responseText;
-				console.log(remote)
 				if (remote == 'OK') {
-					// alert('Thank you for your message')
-					// $(#confirmation).show();
 					$("#confirmation").css("display", "block");
 					document.getElementById('name').value = ''
 					document.getElementById('email').value = ''
@@ -184,6 +181,7 @@
 
 		function closeModal() {
 			$("#confirmation").css("display", "none");
+			window.location.reload();
 			// })
 		}
 

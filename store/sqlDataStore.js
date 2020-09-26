@@ -1,4 +1,4 @@
-const logger = require('../config/HMLogger');
+const logger = require('../config/Logger');
 const mscf = require('./mySQLConnectionFactory');
 
 
@@ -66,45 +66,3 @@ exports.createAssignment = function (assignmentObj) {
 };
 
 
-exports.getAssignments = function () {
-  logger.debug("################### Entered SQLDataStore ################################");
-  var assignments = [];
-  var SQL = "SELECT * FROM codePannu.assignments";
-
-  return new Promise(function (resolve, reject) {
-    // var con = mscf.getSQLConnection();
-    mscf.pool.getConnection(function (err, con) {
-      if (err) {
-        logger.error('Error:- ' + err.stack);
-        reject(new Error('Ooops, something broke!'));
-      } else {
-        con.query(SQL, function (err, result, fields) {
-          logger.debug("################### Entered SQL ################################");
-          if (err) {
-            logger.error('Error:- ' + err.stack);
-            reject(new Error('Ooops, something broke!'));
-          } else {
-            // logger.debug(result);
-            Object.keys(result).forEach(function (key) {
-              var row = result[key];
-              var assignment = {};
-              assignment['id'] = row.id;
-              assignment['name'] = row.name;
-              assignment['email'] = row.email;
-              assignment['level'] = row.level;
-              assignment['day'] = row.day;
-              assignment['answer1'] = row.answer1;
-              assignment['answer2'] = row.answer2;
-              assignment['answer3'] = row.answer3;
-
-              assignments.push(assignment);
-              // logger.debug(assignments);
-            });
-            logger.debug("################### Exited SQLDataStore ################################");
-            resolve(assignments)
-          }
-        });
-      }
-    });
-  });
-};

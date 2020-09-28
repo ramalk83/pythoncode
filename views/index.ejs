@@ -100,14 +100,19 @@
 				<div class="form-control narrow">
 					<label for="name">Name</label>
 					<input name="name" id="name" type="text">
+					<div  class="errormessage">Please enter the value</div>
 				</div>
 				<div class="form-control narrow">
 					<label for="email">Email</label>
-					<input name="email" id="email" type="email">
+					<input name="email" id="email" type="text">
+					<div  class="errormessage">Please enter the value</div>
+					<div id="erroremail" >Please enter the vaild email</div>
 				</div>
 				<div class="form-control">
 					<label for="message">Message</label>
 					<textarea name="message" id="message" rows="4"></textarea>
+					<div class="errormessage">Please enter the value</div>
+					<div id="errormess">Please enter maximum 150 characters</div>
 				</div>
 				<ul class="actions">
 					<li><input value="Send Message" type="submit" onClick='submitFormDetails()'></li>
@@ -171,9 +176,29 @@
 				this.disabled = true
 				//prevent Default functionality
 				e.preventDefault();
+				
+				//Declare the form values
+                var name=document.getElementById('name').value;
+				var email=document.getElementById('email').value;
+				var message=document.getElementById('message').value;
 
-				//do your own request an handle the results
-				var remote = $.ajax({
+				//form vaild check
+				if(name=='' || email=='' || message==''){
+					$(".errormessage").css("display", "block");
+					return false;
+				}
+				
+                else if(message.length>1){
+					alert("please enter maxmimum 150 characters")
+					return false;
+				}
+				else if(email.indexOf("@")==-1){
+					alert("please vaild email id")
+					return false;
+				}
+				else{
+					//do your own request an handle the results
+					var remote = $.ajax({
 					url: '/message',
 					type: 'post',
 					async: false,
@@ -192,6 +217,10 @@
 				else {
 					alert('Could not send your message, please try again')
 				}
+
+			}//else - vaild form check
+				
+				
 			});
 		}
 

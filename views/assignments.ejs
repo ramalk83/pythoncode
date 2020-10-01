@@ -60,10 +60,12 @@
 				<div class="form-control narrow">
 					<!-- <label for="name">Name</label> -->
 					<input name="name" id="name" type="text" placeholder='Your Name'>
+					<div class="error_form" id="name_error_message"></div>
 				</div>
 				<div class="form-control narrow">
 					<!-- <label for="email">Email</label> -->
 					<input name="email" id="email" type="email" placeholder='Your Email'>
+					<div class="error_form" id="email_error_message"></div>
 				</div>
 				<div class="form-control narrow">
 					<div class="select-wrapper">
@@ -73,6 +75,7 @@
 							<option value="2">Level Two</option>
 						</select>
 					</div>
+					<div class="error_form" id="level_error_message"></div>
 				</div>
 				<div class="form-control narrow">
 					<div class="select-wrapper">
@@ -87,6 +90,7 @@
 							<option value="7">Day 7</option>
 						</select>
 					</div>
+					<div class="error_form" id="day_error_message"></div>
 				</div>
 
 
@@ -94,19 +98,22 @@
 					<h4>Paste your Code for your assignment</h4>
 					<!-- <label for='answer1'>Paste your code for exercise 1</label><br> -->
 					<textarea name="answer1" id="answer1" rows="4"></textarea>
+					<div class="error_form" id="answer_error_message"></div>
 				</div>
 
 				<div class="form-control">
-					<div class="g-recaptcha" data-sitekey="6LfYX8QZAAAAACEgNezc1YxR3EceDzcGh04n2BDx"></div>
+					<div class="g-recaptcha"  data-sitekey="6LfYX8QZAAAAACEgNezc1YxR3EceDzcGh04n2BDx"></div>
 					<!-- <input class="form-control d-none" data-recaptcha="true" required data-error="Please complete the Captcha">
 					<div class="help-block with-errors"></div> -->
 				</div>
 
 
 				<ul class="actions">
-					<li><input value="Submit Assignment" type="submit" onClick='submitAssignmentDetails()'></li>
+					<li><input value="Submit Assignment" disabled id="submitDetails" type="submit" onClick='submitAssignmentDetails()'></li>
 				</ul>
 			</form>
+
+			<!---Modal box--->
 			<div id='confirmation' class='modal-check'>
 				<div class='modal-check-header'>
 					<h6> !Error</h6>
@@ -124,6 +131,7 @@
 				</div>
 			</div>
 		</div>
+		
 	</section>
 
 	<!-- Footer -->
@@ -141,6 +149,168 @@
 	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 	<script src="assets/js/main.js"></script>
 	<script language="javascript" type="text/javascript">
+
+//form validation
+	
+$(function(){
+			$("#name_error_message").hide();
+        	$("#answer_error_message").hide();
+			$("#email_error_message").hide();
+			$("#day_error_message").hide();
+			$("#level_error_message").hide();
+
+			var error_name ;
+         	var error_answer ;
+			var error_email ;
+			var error_day ;
+			var error_level ;
+						
+			$("#name").focusout(function(){
+            check_name();
+         	});			 
+			 $("#name").keyup(function() {
+			check_name();
+			});			
+			$("#email").focusout(function() {
+            check_email();
+			});			
+			$("#email").keyup(function() {
+			check_email();
+			});			
+			$("#answer1").keyup(function() {
+			check_answer();
+			});			
+			$("#answer1").focusout(function() {
+			check_answer();
+			});
+			$("#level").blur(function() {
+			check_level();
+			});
+			$("#level").click(function() {
+			check_level();
+			});			
+			$("#day").blur(function() {
+			check_day();
+			});
+			$("#day").click(function() {
+			check_day();
+			});
+
+			//check the name is vaild 
+			function check_name() {
+            var fname = $("#name").val();
+            if (fname !== '') {
+               $("#name_error_message").hide();
+			   $("#name").css("border","2px solid #34F458");
+			   error_name = false;
+            } else {
+               $("#name_error_message").html("Enter Your name");
+               $("#name_error_message").show();
+               $("#name").css("border","2px solid #F90A0A");
+               error_name = true;
+			}			
+			if (error_name === false && error_answer === false && error_email === false && error_level === false && error_day === false)
+			 {	$('#submitDetails').attr("disabled", false);} 
+			 else{  $('#submitDetails').attr("disabled", true); }	
+		 	}
+
+			//check the message is vaild 
+			function check_answer() {
+            var mess = $("#answer1").val();
+            if (mess !== '') {
+               $("#answer_error_message").hide();
+			   $("#answer1").css("border","2px solid #34F458");
+			   error_answer =false;
+			}
+			else {
+               $("#answer_error_message").html("Enter your message");
+               $("#answer_error_message").show();
+               $("#answer1").css("border","2px solid #F90A0A");
+               error_answer = true;
+			}
+			if (error_name === false && error_answer === false && error_email === false && error_level === false && error_day === false)
+		 	{	$('#submitDetails').attr("disabled", false);	 }
+			 else{
+				$('#submitDetails').attr("disabled", true);
+			}	
+						
+		}
+		
+        //check the email vaild
+		function check_email() {
+            var pattern = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+            var email = $("#email").val();
+            if (pattern.test(email) && email !== '') {
+               $("#email_error_message").hide();
+			   $("#email").css("border","2px solid #34F458");
+			   error_email = false;
+            } else {
+               $("#email_error_message").html("Enter the vaild email");
+               $("#email_error_message").show();
+               $("#email").css("border","2px solid #F90A0A");
+               error_email = true;
+			}					
+			if (error_name === false && error_answer === false && error_email === false && error_level === false && error_day === false)
+			 {	$('#submitDetails').attr("disabled", false); } 	
+			else{ $('#submitDetails').attr("disabled", true); }			
+		 }  
+		 
+		 
+			 //check the level is vaild 
+			 function check_level() {
+			var levelv = $("#level option:selected").val();
+			//var year = $('.year option:selected').val();
+            if (levelv !== '') {
+               $("#level_error_message").hide();
+			   $("#level").css("border","2px solid #34F458");
+			   error_level =false;
+			}
+			else {
+               $("#level_error_message").html("Enter your message");
+               $("#level_error_message").show();
+               $("#level").css("border","2px solid #F90A0A");
+               error_level = true;
+			}
+			if (error_name === false && error_answer === false && error_email === false && error_level === false && error_day === false)
+		 	{	$('#submitDetails').attr("disabled", false);	 }
+			 else{
+				$('#submitDetails').attr("disabled", true);
+			}	
+						
+		}
+
+
+			//check the day is vaild 
+			function check_day() {				
+            var dayv = $("#day option:selected").val();
+            if (dayv !== '') {
+               $("#day_error_message").hide();
+			   $("#day").css("border","2px solid #34F458");
+			   error_day =false;
+			}
+			else {
+               $("#day_error_message").html("Enter your message");
+               $("#day_error_message").show();
+               $("#day").css("border","2px solid #F90A0A");
+               error_day = true;
+			}
+			if (error_name === false && error_answer === false && error_email === false && error_level === false && error_day === false)
+		 	{	$('#submitDetails').attr("disabled", false);	 }
+			 else{
+				$('#submitDetails').attr("disabled", true);
+			}
+				
+		}
+
+		 if (error_name === false && error_message === false && error_email === false )
+		 {	$('#submitDetails').attr("disabled", false);	 }	
+
+
+		})
+
+
+
+		//Button click
 		function submitAssignmentDetails() {
 			$("#assignment-details").submit(function (e) {
 				this.disabled = true
@@ -189,7 +359,8 @@
 
 		function closeModal() {
 			$("#confirmation").css("display", "none");
-			window.location.reload();
+			//window.location.reload();
+			
 		}
 	</script>
 

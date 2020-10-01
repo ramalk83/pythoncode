@@ -4085,10 +4085,7 @@ box-shadow: 0 2px 12px 0 rgba(0,0,0,0.4);
 	padding-top: 10px;
 	font-size: 30px;
 }
-.errormessage, #erroremail, #errormess{
-	color:red;
-	display:none;
-}
+
 .modal-confirmation-text{
 	position: absolute;
 	padding-top: 50px;
@@ -4224,3 +4221,18 @@ box-shadow: 0 2px 12px 0 rgba(0,0,0,0.4);
   #navbar li a{
 	text-decoration: none;
   }
+
+  /*form validation*/
+  .error{
+	display: none;
+	margin-left: 10px;
+}		
+
+.error_show{
+	color: red;
+	margin-left: 10px;
+}
+
+input.invalid, textarea.invalid{
+	border: 2px solid red;
+}

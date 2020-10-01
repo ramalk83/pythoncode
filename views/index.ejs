@@ -100,22 +100,20 @@
 				<div class="form-control narrow">
 					<label for="name">Name</label>
 					<input name="name" id="name" type="text">
-					<div  class="errormessage">Please enter the value</div>
+					<div class="error_form" id="name_error_message"></div>
 				</div>
 				<div class="form-control narrow">
 					<label for="email">Email</label>
 					<input name="email" id="email" type="text">
-					<div  class="errormessage">Please enter the value</div>
-					<div id="erroremail" >Please enter the vaild email</div>
+					<div class="error_form" id="email_error_message"></div>
 				</div>
 				<div class="form-control">
 					<label for="message">Message</label>
-					<textarea name="message" id="message" rows="4"></textarea>
-					<div class="errormessage">Please enter the value</div>
-					<div id="errormess">Please enter maximum 150 characters</div>
+					<textarea name="messagefield" id="messagefield" rows="4"></textarea>
+					<div class="error_form" id="message_error_message"></div>
 				</div>
 				<ul class="actions">
-					<li><input value="Send Message" type="submit" onClick='submitFormDetails()'></li>
+					<li><input value="Send Message" disabled type="submit" id="btnSubmit" onClick='submitFormDetails()'></li>
 				</ul>
 			</form>
 
@@ -169,35 +167,112 @@
 	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 	<script src="assets/js/main.js"></script>
 	<script language="javascript" type="text/javascript">
-		function submitFormDetails() {
+	
+	//form validation
+	
+		$(function(){
+			$("#name_error_message").hide();
+        	$("#message_error_message").hide();
+			$("#email_error_message").hide();
+			
+			var error_name ;
+         	var error_message ;
+			var error_email ;
+						
+			$("#name").focusout(function(){
+            check_name();
+         	});
+			 
+			 $("#name").keyup(function() {
+			check_name();
+			});
+			
+			$("#email").focusout(function() {
+            check_email();
+			});
+			
+			$("#email").keyup(function() {
+			check_email();
+			});
+			
+			$("#messagefield").keyup(function() {
+			check_message();
+			});
+			
+			$("#messagefield").focusout(function() {
+			check_message();
+			});
 
-			//hang on event of form with id=myform
-			$("#message-details").submit(function (e) {
-				this.disabled = true
-				//prevent Default functionality
-				e.preventDefault();
-				
-				//Declare the form values
-                var name=document.getElementById('name').value;
-				var email=document.getElementById('email').value;
-				var message=document.getElementById('message').value;
+			//check the name is vaild 
+			function check_name() {
+            var fname = $("#name").val();
+            if (fname !== '') {
+               $("#name_error_message").hide();
+			   $("#name").css("border","2px solid #34F458");
+			   error_name = false;
+            } else {
+               $("#name_error_message").html("Enter Your name");
+               $("#name_error_message").show();
+               $("#name").css("border","2px solid #F90A0A");
+               error_name = true;
+			}
+			
+			if(error_name === false && error_message === false && error_email === false )
+			 {	$('#btnSubmit').attr("disabled", false);} 
+			 else{  $('#btnSubmit').attr("disabled", true); }	
+		 	}
 
-				//form vaild check
-				if(name=='' || email=='' || message==''){
-					$(".errormessage").css("display", "block");
-					return false;
-				}
-				
-                else if(message.length>1){
-					alert("please enter maxmimum 150 characters")
-					return false;
-				}
-				else if(email.indexOf("@")==-1){
-					alert("please vaild email id")
-					return false;
-				}
-				else{
-					//do your own request an handle the results
+			 //check the message is vaild 
+			function check_message() {
+            var mess = $("#messagefield").val();
+            if (mess !== '') {
+               $("#message_error_message").hide();
+			   $("#messagefield").css("border","2px solid #34F458");
+			   error_message =false;
+			}
+			else {
+               $("#message_error_message").html("Enter your message");
+               $("#message_error_message").show();
+               $("#messagefield").css("border","2px solid #F90A0A");
+               error_message = true;
+			}
+			if (error_name === false && error_message === false && error_email === false )
+		 	{	$('#btnSubmit').attr("disabled", false);	 }
+			 else{
+				$('#btnSubmit').attr("disabled", true);
+			}	
+						
+		}
+		
+        //check the email vaild
+		function check_email() {
+            var pattern = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+            var email = $("#email").val();
+            if (pattern.test(email) && email !== '') {
+               $("#email_error_message").hide();
+			   $("#email").css("border","2px solid #34F458");
+			   error_email = false;
+            } else {
+               $("#email_error_message").html("Enter the vaild email");
+               $("#email_error_message").show();
+               $("#email").css("border","2px solid #F90A0A");
+               error_email = true;
+			}		
+			
+			if(error_name === false && error_message === false && error_email === false )
+			 {	$('#btnSubmit').attr("disabled", false); } 	
+			else{ $('#btnSubmit').attr("disabled", true); }			
+         }  
+		
+		 if (error_name === false && error_message === false && error_email === false )
+		 {	$('#btnSubmit').attr("disabled", false);	 }	
+		})
+
+		
+		//Button click function
+		function submitFormDetails() {			
+					//alert("success")
+		    		//do your own request an handle the results
 					var remote = $.ajax({
 					url: '/message',
 					type: 'post',
@@ -212,27 +287,22 @@
 					$("#confirmation").css("display", "block");
 					document.getElementById('name').value = ''
 					document.getElementById('email').value = ''
-					document.getElementById('message').value = ''
+					document.getElementById('messagefield').value = ''
 				}
 				else {
 					alert('Could not send your message, please try again')
 				}
-
-			}//else - vaild form check
 				
-				
-			});
-		}
-
-		function closeModal() {
+			}
+	
+	function closeModal() {
 			$("#confirmation").css("display", "none");
 			window.location.reload();
 			// })
-		}
+	}
 
-
+	
 	</script>
-
 </body>
 
 </html>

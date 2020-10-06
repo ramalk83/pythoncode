@@ -12,9 +12,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 	<link rel="stylesheet" href="assets/css/main.css" />
-	<link rel="icon" type="image/png" href="images/favicon.ico"/>
-	<link rel="icon" type="image/png" href="images/favicon.ico"/>
-
 	<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /> -->
 	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 
@@ -33,48 +30,16 @@
 </head>
 
 <body>
-	
 	<!-- #header -->
-	<header id="header" class="header header-hide header-border">
+	<header id="header" class="header header-hide">
 		<!-- <div class="container"> -->
-		<div id="logo" class="pull-left" >
-			<h1><a href="#body" class="scrollto"><span class="logo">codePannu</span></a></h1>
+		<div id="logo" class="pull-left">
+			<h1><a href="#body" class="scrollto"><span>codePannu</span></a></h1>
 		</div>
-		<nav >
-			<div class="hamburger" id="menu"  onClick = 'openMenu()'>
-				<div class="line"></div>
-				<div class="line"></div>
-				<div class="line"></div>
-			</div>
-		  
-			<ul class="nav-links" id="menuLink">
-				<li>
-					<a href="#" ><i class="fa fa-home"></i> Home</a></li>
-				<li class="about"><a href="#" >About <i class="fa fa-caret-down" aria-hidden="true" style="transform: rotate(-90deg);"></i></a>
-					<ul>
-						<li>
-						<a href="#">About Us</a>
-						</li>
-						<li>
-							<a href="#">Our Team</a>
-						</li>
-					</ul>
-				</li>
-				<li class="course"><a href="#">Course<i class="fa fa-sort-desc" aria-hidden="true" style="transform: rotate(-90deg);"></i></a>
-					<ul>
-						<li><a href="#">Courses Details</a></li>
-						<li><a href="#">Assignments</a></li>
-					</ul>
-				</li>
-				<li>
-					<a href="#">Contact</a>
-				</li>
-			</ul>
-		</nav>
+		<div style="float:right; padding:5px; font-size:30px">
+			<a href="/" style="float:right; padding:5px; font-size:30px"><i class="fa fa-home"></i></a></div>
 		<!-- </div> -->
 	</header><!-- #header -->
-
-
 
 	<!-- Banner -->
 	<section id="banner">
@@ -133,23 +98,23 @@
 			</header>
 			<form id='message-details' class="grid-form">
 				<div class="form-control narrow">
-					
-					<input name="name" id="name" placeholder="Enter your Name" type="text">
+					<label for="name">Name</label>
+					<input name="name" id="name" type="text">
 					<div class="error_form" id="name_error_message"></div>
 				</div>
 				<div class="form-control narrow">
-					
-					<input name="email" id="email" placeholder="Enter your Email" type="text">
+					<label for="email">Email</label>
+					<input name="email" id="email" type="text">
 					<div class="error_form" id="email_error_message"></div>
 				</div>
 				<div class="form-control">
-					
-					<textarea name="messagefield" placeholder="Enter your Message" id="messagefield" rows="4"></textarea>
+					<label for="message">Message</label>
+					<textarea name="messagefield" id="messagefield" rows="4"></textarea>
 					<div class="error_form" id="message_error_message"></div>
 				</div>
 				<br/>
 				<ul class="actions">
-					<li><input value="Send Message" type="submit" id="btnSubmit"></li>
+					<li><input value="Send Message" type="submit" id="btnSubmit" onClick='submitFormDetails()'></li>
 				</ul>
 			</form>
 
@@ -204,24 +169,9 @@
 	<script src="assets/js/main.js"></script>
 	<script language="javascript" type="text/javascript">
 	
-	function openMenu(){
-	  	   const hamburger = document.getElementById("menu");
-	  	   const navLinks = document.getElementById("menuLink");
-      	   navLinks.classList.toggle("open");
-     	}
-	
-	function myFunction() {
-		var x = document.getElementById("myTopnav");
-		if (x.className === "topnav") {
-			x.className += " responsive";
-		} else {
-			x.className = "topnav";
-		}
-	}
-
 	//form validation
+	
 	$( document ).ready(function(){
-		
 			$("#name_error_message").css('display', 'none');
         	$("#message_error_message").css('display', 'none');
 			$("#email_error_message").css('display', 'none');
@@ -233,9 +183,7 @@
          	});
 			 
 			 $("#name").keyup(function() {
-			$("#name").css("border","2px solid #FCE205");
 			check_name();
-			
 			});
 			
 			$("#email").focusout(function() {
@@ -252,22 +200,20 @@
 			
 			$("#messagefield").focusout(function() {
 			check_message();
-
 			});
 
 			//check the name is vaild 
-			function check_name() {	
-						
+			function check_name() {
             var fname = $("#name").val();
             if (fname !== '') {
 			   $("#name_error_message").css('display', 'none');	
 			   $("#name").css("border","");		 
-			   formsubmit1 = false;
+			   formsubmit = false;
             } else {
 			   $("#name_error_message").html("Enter Your name");			   
 			   $("#name_error_message").css('display', 'block');		
                $("#name").css("border","2px solid #00b4b5");
-			   formsubmit1 = true;
+			   formsubmit = true;
 			   return false;
 			}
 			
@@ -276,20 +222,21 @@
 
 			 //check the message is vaild 
 			function check_message() {
-					
             var mess = $("#messagefield").val();
             if (mess !== '') {
 			   $("#message_error_message").css('display', 'none');
-			   $("#messagefield").css("border","");				   		 
-			   formsubmit2 =false;
+			   $("#messagefield").css("border","");	
+			   		 
+			   formsubmit =false;
 			}
 			else {
                $("#message_error_message").html("Enter your message");
                $("#message_error_message").css('display', 'block');
 			   $("#messagefield").css("border","2px solid #00b4b5");
-			   formsubmit2 = true;
+			   formsubmit = true;
 			   return false;
-			}		
+			}
+			
 						
 		}
 		
@@ -300,36 +247,34 @@
             if (pattern.test(email) && email !== '') {
                $("#email_error_message").css('display', 'none');
 			   $("#email").css("border","");	
-			   formsubmit3 = false;
+			   formsubmit = false;
             } else {
                $("#email_error_message").html("Enter the vaild email");
                $("#email_error_message").css('display', 'block');
 			   $("#email").css("border","2px solid #00b4b5");
 			   $("#email").focus("border","2px solid #00b4b5");
-			   formsubmit3 = true;
+			   formsubmit = true;
 			   return false;
 			}		
 					
          }  
-	
+		
 		
 		 $( "#message-details" ).submit(function( event ) {	
 			event.preventDefault();
 			
-			//$('#btnSubmit').attr("disabled", false);
-			check_message();	 
+			//$('#btnSubmit').attr("disabled", false);	 
 			check_name();			
 			check_email();
-		
-			if (formsubmit1==true || formsubmit2==true  || formsubmit2==true )
+			check_message();
+			if (formsubmit)
 			{ 				
-				
-				return false
-								
+				return false 
+				alert('vvvvv')
 			}
 			else
 			{	
-			   alert("success")
+			   //alert("success")
 			   //do your own request an handle the results
 			   var remote = $.ajax({
 			   url: '/message',

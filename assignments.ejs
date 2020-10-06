@@ -109,7 +109,7 @@
 
 
 				<ul class="actions">
-					<li><input value="Submit Assignment"  id="submitDetails" type="submit" onClick='submitAssignmentDetails()'></li>
+					<li><input value="Submit Assignment"  id="submitDetails" type="submit" ></li>
 				</ul>
 			</form>
 
@@ -198,12 +198,12 @@ $( document ).ready(function(){
             if (fname !== '') {
                $("#name_error_message").hide();
 			   $("#name").css("border","");	
-			   formsubmit = false;
+			   formsubmit1 = false;
             } else {
                $("#name_error_message").html("Enter Your name");
                $("#name_error_message").show();
                $("#name").css("border","2px solid #00b4b5");
-               formsubmit = true;
+               formsubmit1 = true;
 			}			
 			
 		 	}
@@ -214,13 +214,13 @@ $( document ).ready(function(){
             if (mess !== '') {
                $("#answer_error_message").hide();
 			   $("#answer1").css("border","");
-			   formsubmit =false;
+			   formsubmit2 =false;
 			}
 			else {
                $("#answer_error_message").html("Enter your message");
                $("#answer_error_message").show();
                $("#answer1").css("border","2px solid #00b4b5");
-			   formsubmit = true;
+			   formsubmit2 = true;
 			}
 			
 						
@@ -233,13 +233,13 @@ $( document ).ready(function(){
             if (pattern.test(email) && email !== '') {
                $("#email_error_message").hide();
 			   $("#email").css("border","");
-			   formsubmit = false;
+			   formsubmit3 = false;
             } else {
                $("#email_error_message").html("Enter the vaild email");
                $("#email_error_message").show();
 			   $("#email").css("border","2px solid #00b4b5");
 			   $("#email").focus("border","2px solid #00b4b5");
-               formsubmit = true;
+               formsubmit3 = true;
 			}					
 			
 		 }  
@@ -252,13 +252,13 @@ $( document ).ready(function(){
             if (levelv !== '') {
                $("#level_error_message").hide();
 			   $("#level").css("border","");
-			   formsubmit =false;
+			   formsubmit4 =false;
 			}
 			else {
-               $("#level_error_message").html("Enter your message");
+               $("#level_error_message").html("Enter the level");
                $("#level_error_message").show();
                $("#level").css("border","2px solid #00b4b5");
-			   formsubmit = true;
+			   formsubmit4 = true;
 			}		
 						
 		}
@@ -270,13 +270,13 @@ $( document ).ready(function(){
             if (dayv !== '') {
                $("#day_error_message").hide();
 			   $("#day").css("border","");
-			   formsubmit =false;
+			   formsubmit5 =false;
 			}
 			else {
-               $("#day_error_message").html("Enter your message");
+               $("#day_error_message").html("Enter the day");
                $("#day_error_message").show();
                $("#day").css("border","2px solid #00b4b5");
-			   formsubmit = true;
+			   formsubmit5 = true;
 			}
 			
 				
@@ -293,13 +293,15 @@ $( document ).ready(function(){
 				check_email();
 				check_level();
 				check_day();
-y
-				if (formsubmit )
-				{ 				
+
+				if (formsubmit1 || formsubmit2 || formsubmit3 || formsubmit4 || formsubmit5 )
+				{  
+				
 					return false 
 				}
 				else
-				{	
+				{
+					
 				const captcha = document.querySelector('#g-recaptcha-response').value
 				const name = document.getElementById('name').value
 				const email = document.getElementById('email').value
@@ -334,6 +336,7 @@ y
 								})
 						}
 						else {
+							
 							$("#confirmation").css("display", "block");
 						}
 					})

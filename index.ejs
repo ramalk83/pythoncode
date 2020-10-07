@@ -232,23 +232,13 @@
             check_name();
          	});
 			 
-			 $("#name").keyup(function() {
-			$("#name").css("border","2px solid #FCE205");
-			check_name();
 			
-			});
 			
 			$("#email").focusout(function() {
             check_email();
 			});
 			
-			$("#email").keyup(function() {
-			check_email();
-			});
-			
-			$("#messagefield").keyup(function() {
-			check_message();
-			});
+		
 			
 			$("#messagefield").focusout(function() {
 			check_message();
@@ -329,7 +319,7 @@
 			}
 			else
 			{	
-			   alert("success")
+			 
 			   //do your own request an handle the results
 			   var remote = $.ajax({
 			   url: '/message',

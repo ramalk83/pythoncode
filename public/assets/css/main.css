@@ -30,7 +30,165 @@
 	ol, ul {
 		list-style: none;
 	}
+	
+	nav {
+		height: 10vh;		
+		background:white;
+	    
+	}
 
+
+	.nav-links {
+		display: flex;
+		list-style: none;
+		width: 70%;
+		height: 100%;
+		justify-content: right;
+		align-items: right;
+		margin-right:0px ;	
+
+		}
+
+		.nav-links li {
+			background:white;
+			position: relative;
+			list-style: none;
+			display: inline-block;	
+					
+		}
+
+	.nav-links li a {
+		display: block;
+		font-family: "Philosopher", sans-serif;
+		padding: 0 15px;
+		color: black;
+		text-decoration: none;
+		line-height: 60px;
+		font-size: 15px;
+		font-weight: 700;
+		margin-left: 5px;
+		width: max-content; 
+		
+	}
+
+	.nav-links li:hover{
+		color: white;  
+		background-color: #00b4b5;	
+		z-index: 1;	 
+	}
+	
+	nav ul ul{
+		position: absolute;
+		top:60px;
+		margin-left: -24px;
+		display: none;
+	}
+	nav ul li:hover > ul{
+		display: block;
+		width:100%;	
+			
+	}
+	
+	nav li ul li:hover{
+		background-color: #ececec;
+			
+	}
+
+	nav ul ul li{
+		width: 200px;
+		float: none;
+		display: list-item;
+		position: relative;
+		justify-items: left;
+	}
+
+	nav ul ul li  {
+		border-top: solid 1px white;
+	}
+
+    @media screen and (max-width: 768px){
+		nav ul ul{
+			position: absolute;
+			top:60px;
+			margin-left: -15px;
+		
+		}
+		.nav-links{
+			margin-left:-10px;
+			padding-left:0px;
+			
+		}
+		
+		 .pull-left {
+		   position: relative;
+		 
+		 }
+		
+		.line {
+			width: 30px;
+			height: 3px;
+			background: black;
+			margin: 5px;
+		}
+			 
+		
+		.hamburger{
+			position: absolute;
+			cursor: pointer;
+			right: 5%;
+			top: 30%;
+			z-index: 2;
+		}
+		.nav-links {
+			position: absolute;
+			background: white;
+			height: 100vh;
+			width: 60%;
+			margin-top: 60px;
+			flex-direction: column;
+			justify-content: flex-start;
+			right: -70%;			
+			clip-path: circle(100px at 90% -10%);
+			-webkit-clip-path: circle(100px at 90% -10%);
+			transition: all 1s ease-out;
+			
+		}
+		.nav-links li {
+			background:white;			
+			position: relative;
+			list-style: none;
+			display: grid;
+			padding-right: 100%;			
+			margin-right: auto;
+				
+		}
+		
+		
+		nav ul ul li {
+			position: relative;			
+			list-style: none;			
+			cursor: pointer;
+			display: grid;
+		
+		     
+		}
+		.about:hover, .course:hover {
+			 width: 100%;		   
+			 display: grid;			
+			 position: relative;
+			 margin-bottom: 130px;
+			 justify-items: left;		
+			
+		}
+        
+		.open {
+			
+			clip-path: circle(1000px at 70% -30%);
+			-webkit-clip-path: circle(1000px at 70% -30%);
+			right: 0%;
+			
+		}
+	}
 	blockquote, q {
 		quotes: none;
 	}
@@ -44,11 +202,8 @@
 		border-collapse: collapse;
 		border-spacing: 0;
 	}
-
-	body {
-		-webkit-text-size-adjust: none;
-	}
-
+/* nav bar */
+    
 /* Box Model */
 
 	*, *:before, *:after {
@@ -1284,6 +1439,7 @@
 		.\34 u\24\28small\29 + *,
 		.\33 u\24\28small\29 + *,
 		.\32 u\24\28small\29 + *,
+
 		.\31 u\24\28small\29 + * {
 			clear: left;
 		}
@@ -2220,7 +2376,7 @@
 		select:focus,
 		textarea:focus {
 			border-color: #FCE205;
-			box-shadow: 0 0 0 1px #FCE205;
+			/*box-shadow: 0 0 0 1px #FCE205;*/
 		}
 
 	.select-wrapper:before {
@@ -2248,7 +2404,7 @@
 	input[type="checkbox"]:focus + label:before,
 	input[type="radio"]:focus + label:before {
 		border-color: #FCE205;
-		box-shadow: 0 0 0 1px #FCE205;
+		/*box-shadow: 0 0 0 1px #FCE205;*/
 	}
 
 	::-webkit-input-placeholder {
@@ -2534,6 +2690,7 @@
 
 	header {
 		margin-bottom: 1em;
+		/*box-shadow: 0 4px 2px -2px gray;*/
 	}
 
 		header p {
@@ -2570,7 +2727,7 @@
 		header.major {
 			margin-bottom: 4em;
 		}
-
+		
 		@media screen and (max-width: 1280px) {
 
 			header.major {
@@ -3133,7 +3290,7 @@
 				.wrapper.style2 select:focus,
 				.wrapper.style2 textarea:focus {
 					border-color: #FCE205;
-					box-shadow: 0 0 0 1px #FCE205;
+					/*box-shadow: 0 0 0 1px #FCE205;*/
 				}
 
 			.wrapper.style2 .select-wrapper:before {
@@ -3519,6 +3676,7 @@
 		color: #ffffff;
 		padding: 8em 0 6em 0;
 		text-align: center;
+		margin-top:60px;
 	}
 
 		#banner input, #banner select, #banner textarea {
@@ -3865,14 +4023,17 @@
 	height: 48px;
 	z-index: 3;
 	transition: all 0.5s ease;
+	
   }
   
   #header #logo {
-	padding: 6px 0 0 0;
+	/*padding: 6px 0 0 0;*/
+	margin-top: 20px;
+	margin-left: 10px;
   }
   
   #header #logo h1 {
-	color: #505050;
+	color:white;
 	font-family: "Philosopher", sans-serif;
 	font-size: 26px;
 	font-weight: 500;
@@ -3881,7 +4042,7 @@
   }
   
   #header #logo h1 a {
-	color: #555;
+	color: black;
 	line-height: 1;
 	display: inline-block;
 	text-decoration: none;
@@ -3905,7 +4066,9 @@
 	background-color: #009a9c;
 	color: #f7f7f7 
 }
-
+.header-border{
+	box-shadow: 0 4px 2px -2px gray;
+}
 /* assignment-details */
 
 .assignment-details {
@@ -4085,7 +4248,10 @@ box-shadow: 0 2px 12px 0 rgba(0,0,0,0.4);
 	padding-top: 10px;
 	font-size: 30px;
 }
-
+.errormessage, #erroremail, #errormess{
+	color:red;
+	display:none;
+}
 .modal-confirmation-text{
 	position: absolute;
 	padding-top: 50px;
@@ -4205,6 +4371,7 @@ box-shadow: 0 2px 12px 0 rgba(0,0,0,0.4);
   #navbar{
 	width: 100vw;
 	background-color: #D6EFFF;
+	
   }
 
   /* #navbar ul{
@@ -4222,17 +4389,10 @@ box-shadow: 0 2px 12px 0 rgba(0,0,0,0.4);
 	text-decoration: none;
   }
 
-  /*form validation*/
-  .error{
-	display: none;
-	margin-left: 10px;
-}		
-
-.error_show{
+  
+  .error_form{
 	color: red;
-	margin-left: 10px;
-}
+	float:left;
+	font-size:12px;
 
-input.invalid, textarea.invalid{
-	border: 2px solid red;
 }

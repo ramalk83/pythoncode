@@ -109,7 +109,7 @@
 
 
 				<ul class="actions">
-					<li><input value="Submit Assignment" disabled id="submitDetails" type="submit" onClick='submitAssignmentDetails()'></li>
+					<li><input value="Submit Assignment"  id="submitDetails" type="submit" ></li>
 				</ul>
 			</form>
 
@@ -152,34 +152,23 @@
 
 //form validation
 	
-$(function(){
+$( document ).ready(function(){
 			$("#name_error_message").hide();
         	$("#answer_error_message").hide();
 			$("#email_error_message").hide();
 			$("#day_error_message").hide();
 			$("#level_error_message").hide();
 
-			var error_name ;
-         	var error_answer ;
-			var error_email ;
-			var error_day ;
-			var error_level ;
+			var formsubmit;	
 						
 			$("#name").focusout(function(){
             check_name();
          	});			 
-			 $("#name").keyup(function() {
-			check_name();
-			});			
+			
 			$("#email").focusout(function() {
             check_email();
 			});			
-			$("#email").keyup(function() {
-			check_email();
-			});			
-			$("#answer1").keyup(function() {
-			check_answer();
-			});			
+				
 			$("#answer1").focusout(function() {
 			check_answer();
 			});
@@ -201,17 +190,15 @@ $(function(){
             var fname = $("#name").val();
             if (fname !== '') {
                $("#name_error_message").hide();
-			   $("#name").css("border","2px solid #34F458");
-			   error_name = false;
+			   $("#name").css("border","");	
+			   formsubmit1 = false;
             } else {
                $("#name_error_message").html("Enter Your name");
                $("#name_error_message").show();
-               $("#name").css("border","2px solid #F90A0A");
-               error_name = true;
+               $("#name").css("border","2px solid #00b4b5");
+               formsubmit1 = true;
 			}			
-			if (error_name === false && error_answer === false && error_email === false && error_level === false && error_day === false)
-			 {	$('#submitDetails').attr("disabled", false);} 
-			 else{  $('#submitDetails').attr("disabled", true); }	
+			
 		 	}
 
 			//check the message is vaild 
@@ -219,20 +206,16 @@ $(function(){
             var mess = $("#answer1").val();
             if (mess !== '') {
                $("#answer_error_message").hide();
-			   $("#answer1").css("border","2px solid #34F458");
-			   error_answer =false;
+			   $("#answer1").css("border","");
+			   formsubmit2 =false;
 			}
 			else {
                $("#answer_error_message").html("Enter your message");
                $("#answer_error_message").show();
-               $("#answer1").css("border","2px solid #F90A0A");
-               error_answer = true;
+               $("#answer1").css("border","2px solid #00b4b5");
+			   formsubmit2 = true;
 			}
-			if (error_name === false && error_answer === false && error_email === false && error_level === false && error_day === false)
-		 	{	$('#submitDetails').attr("disabled", false);	 }
-			 else{
-				$('#submitDetails').attr("disabled", true);
-			}	
+			
 						
 		}
 		
@@ -242,40 +225,34 @@ $(function(){
             var email = $("#email").val();
             if (pattern.test(email) && email !== '') {
                $("#email_error_message").hide();
-			   $("#email").css("border","2px solid #34F458");
-			   error_email = false;
+			   $("#email").css("border","");
+			   formsubmit3 = false;
             } else {
                $("#email_error_message").html("Enter the vaild email");
                $("#email_error_message").show();
-               $("#email").css("border","2px solid #F90A0A");
-               error_email = true;
+			   $("#email").css("border","2px solid #00b4b5");
+			   $("#email").focus("border","2px solid #00b4b5");
+               formsubmit3 = true;
 			}					
-			if (error_name === false && error_answer === false && error_email === false && error_level === false && error_day === false)
-			 {	$('#submitDetails').attr("disabled", false); } 	
-			else{ $('#submitDetails').attr("disabled", true); }			
+			
 		 }  
 		 
 		 
 			 //check the level is vaild 
-			 function check_level() {
+			function check_level() {
 			var levelv = $("#level option:selected").val();
 			//var year = $('.year option:selected').val();
             if (levelv !== '') {
                $("#level_error_message").hide();
-			   $("#level").css("border","2px solid #34F458");
-			   error_level =false;
+			   $("#level").css("border","");
+			   formsubmit4 =false;
 			}
 			else {
-               $("#level_error_message").html("Enter your message");
+               $("#level_error_message").html("Enter the level");
                $("#level_error_message").show();
-               $("#level").css("border","2px solid #F90A0A");
-               error_level = true;
-			}
-			if (error_name === false && error_answer === false && error_email === false && error_level === false && error_day === false)
-		 	{	$('#submitDetails').attr("disabled", false);	 }
-			 else{
-				$('#submitDetails').attr("disabled", true);
-			}	
+               $("#level").css("border","2px solid #00b4b5");
+			   formsubmit4 = true;
+			}		
 						
 		}
 
@@ -285,38 +262,39 @@ $(function(){
             var dayv = $("#day option:selected").val();
             if (dayv !== '') {
                $("#day_error_message").hide();
-			   $("#day").css("border","2px solid #34F458");
-			   error_day =false;
+			   $("#day").css("border","");
+			   formsubmit5 =false;
 			}
 			else {
-               $("#day_error_message").html("Enter your message");
+               $("#day_error_message").html("Enter the day");
                $("#day_error_message").show();
-               $("#day").css("border","2px solid #F90A0A");
-               error_day = true;
+               $("#day").css("border","2px solid #00b4b5");
+			   formsubmit5 = true;
 			}
-			if (error_name === false && error_answer === false && error_email === false && error_level === false && error_day === false)
-		 	{	$('#submitDetails').attr("disabled", false);	 }
-			 else{
-				$('#submitDetails').attr("disabled", true);
-			}
+			
 				
 		}
 
-		 if (error_name === false && error_message === false && error_email === false )
-		 {	$('#submitDetails').attr("disabled", false);	 }	
-
-
-		})
-
-
-
-		//Button click
-		function submitAssignmentDetails() {
+		//Button click	
 			$("#assignment-details").submit(function (e) {
 				this.disabled = true
 				//prevent Default functionality
 				e.preventDefault();
 
+				check_name();
+				check_answer();
+				check_email();
+				check_level();
+				check_day();
+
+				if (formsubmit1 || formsubmit2 || formsubmit3 || formsubmit4 || formsubmit5 )
+				{  
+				
+					return false 
+				}
+				else
+				{
+					
 				const captcha = document.querySelector('#g-recaptcha-response').value
 				const name = document.getElementById('name').value
 				const email = document.getElementById('email').value
@@ -351,17 +329,19 @@ $(function(){
 								})
 						}
 						else {
+							
 							$("#confirmation").css("display", "block");
 						}
 					})
-			});
-		}
+				}
+			});			
+	})
 
 		function closeModal() {
 			$("#confirmation").css("display", "none");
-			//window.location.reload();
-			
+			//window.location.reload();						
 		}
+
 	</script>
 
 

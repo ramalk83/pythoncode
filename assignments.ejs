@@ -66,7 +66,7 @@
 				</div>
 				<div class="form-control narrow">
 					<!-- <label for="email">Email</label> -->
-					<input name="email" id="email" type="email" placeholder='Your Email'>
+					<input name="email" id="email" type="text" placeholder='Your Email'>
 					<div class="error_form" id="email_error_message"></div>
 				</div>
 				<div class="form-control narrow">
@@ -163,30 +163,7 @@ $( document ).ready(function(){
 
 			var formsubmit;	
 						
-			$("#name").focusout(function(){
-            check_name();
-         	});			 
 			
-			$("#email").focusout(function() {
-            check_email();
-			});			
-				
-			$("#answer1").focusout(function() {
-			check_answer();
-			});
-			$("#level").blur(function() {
-			check_level();
-			});
-			$("#level").click(function() {
-			check_level();
-			});			
-			$("#day").blur(function() {
-			check_day();
-			});
-			$("#day").click(function() {
-			check_day();
-			});
-
 			//check the name is vaild 
 			function check_name() {
             var fname = $("#name").val();
@@ -197,7 +174,7 @@ $( document ).ready(function(){
             } else {
                $("#name_error_message").html("Enter Your name");
                $("#name_error_message").show();
-               $("#name").css("border","2px solid #00b4b5");
+               $("#name").css("border","2px solid  #FCE205");
                formsubmit1 = true;
 			}			
 			
@@ -214,7 +191,7 @@ $( document ).ready(function(){
 			else {
                $("#answer_error_message").html("Enter your message");
                $("#answer_error_message").show();
-               $("#answer1").css("border","2px solid #00b4b5");
+               $("#answer1").css("border","2px solid  #FCE205");
 			   formsubmit2 = true;
 			}
 			
@@ -232,8 +209,8 @@ $( document ).ready(function(){
             } else {
                $("#email_error_message").html("Enter the vaild email");
                $("#email_error_message").show();
-			   $("#email").css("border","2px solid #00b4b5");
-			   $("#email").focus("border","2px solid #00b4b5");
+			   $("#email").css("border","2px solid  #FCE205");
+			  
                formsubmit3 = true;
 			}					
 			
@@ -252,7 +229,7 @@ $( document ).ready(function(){
 			else {
                $("#level_error_message").html("Enter the level");
                $("#level_error_message").show();
-               $("#level").css("border","2px solid #00b4b5");
+               $("#level").css("border","2px solid  #FCE205");
 			   formsubmit4 = true;
 			}		
 						
@@ -270,7 +247,7 @@ $( document ).ready(function(){
 			else {
                $("#day_error_message").html("Enter the day");
                $("#day_error_message").show();
-               $("#day").css("border","2px solid #00b4b5");
+               $("#day").css("border","2px solid  #FCE205");
 			   formsubmit5 = true;
 			}
 			

@@ -37,7 +37,7 @@
 	    
 	}
 
-
+  /* navbar */
 	.nav-links {
 		display: flex;
 		list-style: none;
@@ -46,7 +46,7 @@
 		justify-content: right;
 		align-items: right;
 		margin-right:0px ;	
-
+		
 		}
 
 		.nav-links li {
@@ -113,11 +113,7 @@
 			margin-left: -15px;
 		
 		}
-		.nav-links{
-			margin-left:-10px;
-			padding-left:0px;
-			
-		}
+	
 		
 		 .pull-left {
 		   position: relative;
@@ -130,8 +126,7 @@
 			background: black;
 			margin: 5px;
 		}
-			 
-		
+	
 		.hamburger{
 			position: absolute;
 			cursor: pointer;
@@ -154,22 +149,64 @@
 			
 		}
 		.nav-links li {
-			background:white;			
+			background:white;
+			
 			position: relative;
 			list-style: none;
 			display: grid;
 			padding-right: 100%;			
 			margin-right: auto;
-				
+					
 		}
+	
 		
+	
+		.nav-links li a {
+			display: block;
+			font-family: "Philosopher", sans-serif;
+			padding: 0 35px;
+			/*padding: 0 15px;*/
+			color:#029696;
+			text-decoration: none;
+			line-height: 60px;
+			font-size: 15px;
+			font-weight: 400;
+			margin-left: 5px;
+			width: max-content; 
+			
+		}
+	
+		.nav-links li:hover{
+			color: white;  
+			background-color: #e1e9e9;
+			 
+		}
+	
+		nav ul ul{
+			position: absolute;
+			top:60px;
+			margin-left: -24px;
+			display: none;
+			
+		}
+		nav ul li:hover > ul{
+			display: block;
+		}
+	
+		nav ul ul li{
+			width: 200px;
+			float: none;
+			display: list-item;
+			position: relative;
+			justify-items: left;
+		}
 		
 		nav ul ul li {
 			position: relative;			
 			list-style: none;			
 			cursor: pointer;
 			display: grid;
-		
+			
 		     
 		}
 		.about:hover, .course:hover {
@@ -2366,7 +2403,7 @@
 	input[type="email"],
 	select,
 	textarea {
-		background: rgba(144, 144, 144, 0.075);
+		background: white;
 		border-color: #e3e3e3;
 	}
 
@@ -2376,7 +2413,7 @@
 		select:focus,
 		textarea:focus {
 			border-color: #FCE205;
-			/*box-shadow: 0 0 0 1px #FCE205;*/
+			box-shadow: 0 0 0 1px #FCE205;
 		}
 
 	.select-wrapper:before {
@@ -2404,7 +2441,7 @@
 	input[type="checkbox"]:focus + label:before,
 	input[type="radio"]:focus + label:before {
 		border-color: #FCE205;
-		/*box-shadow: 0 0 0 1px #FCE205;*/
+		box-shadow: 0 0 0 1px #FCE205;
 	}
 
 	::-webkit-input-placeholder {
@@ -2690,7 +2727,7 @@
 
 	header {
 		margin-bottom: 1em;
-		/*box-shadow: 0 4px 2px -2px gray;*/
+		
 	}
 
 		header p {
@@ -2989,7 +3026,7 @@
 				.wrapper.style1 input[type="button"]:active,
 				.wrapper.style1 button:active,
 				.wrapper.style1 .button:active {
-					background-color: #eaeaea;
+					background-color: #ffffff;
 				}
 
 				.wrapper.style1 input[type="submit"].alt,
@@ -3290,7 +3327,7 @@
 				.wrapper.style2 select:focus,
 				.wrapper.style2 textarea:focus {
 					border-color: #FCE205;
-					/*box-shadow: 0 0 0 1px #FCE205;*/
+					box-shadow: 0 0 0 1px #FCE205;
 				}
 
 			.wrapper.style2 .select-wrapper:before {
@@ -4066,9 +4103,7 @@
 	background-color: #009a9c;
 	color: #f7f7f7 
 }
-.header-border{
-	box-shadow: 0 4px 2px -2px gray;
-}
+
 /* assignment-details */
 
 .assignment-details {

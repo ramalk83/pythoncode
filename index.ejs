@@ -228,59 +228,45 @@
 				
 			var formsubmit;	
 			
-			$("#name").focusout(function(){
+			/*$("#name").focusout(function(){
             check_name();
-         	});
+			 });*/
 			 
-			
-			
-			$("#email").focusout(function() {
-            check_email();
-			});
-			
-		
-			
-			$("#messagefield").focusout(function() {
-			check_message();
-
-			});
-
 			//check the name is vaild 
 			function check_name() {	
 						
-            var fname = $("#name").val();
-            if (fname !== '') {
-			   $("#name_error_message").css('display', 'none');	
-			   $("#name").css("border","");		 
-			   formsubmit1 = false;
-            } else {
-			   $("#name_error_message").html("Enter Your name");			   
-			   $("#name_error_message").css('display', 'block');		
-               $("#name").css("border","2px solid #00b4b5");
-			   formsubmit1 = true;
-			   return false;
-			}
-			
+				var fname = $("#name").val();
+				if (fname !== '') {
+				$("#name_error_message").css('display', 'none');	
+				$("#name").css("border","");		 
+				formsubmit1 = false;
+				} else {
+				$("#name_error_message").html("Enter Your name");			   
+				$("#name_error_message").css('display', 'block');		
+				$("#name").css("border","2px solid  #FCE205");
+				formsubmit1 = true;
+				return false;
+				}			
 			
 		 	}
 
 			 //check the message is vaild 
 			function check_message() {
 					
-            var mess = $("#messagefield").val();
-            if (mess !== '') {
-			   $("#message_error_message").css('display', 'none');
-			   $("#messagefield").css("border","");				   		 
-			   formsubmit2 =false;
-			}
-			else {
-               $("#message_error_message").html("Enter your message");
-               $("#message_error_message").css('display', 'block');
-			   $("#messagefield").css("border","2px solid #00b4b5");
-			   formsubmit2 = true;
-			   return false;
-			}		
-						
+				var mess = $("#messagefield").val();
+				if (mess !== '') {
+				$("#message_error_message").css('display', 'none');
+				$("#messagefield").css("border","");				   		 
+				formsubmit2 =false;
+				}
+				else {
+				$("#message_error_message").html("Enter your message");
+				$("#message_error_message").css('display', 'block');
+				$("#messagefield").css("border","2px solid  #FCE205");
+				formsubmit2 = true;
+				return false;
+				}		
+							
 		}
 		
         //check the email vaild
@@ -294,8 +280,8 @@
             } else {
                $("#email_error_message").html("Enter the vaild email");
                $("#email_error_message").css('display', 'block');
-			   $("#email").css("border","2px solid #00b4b5");
-			   $("#email").focus("border","2px solid #00b4b5");
+			   $("#email").css("border","2px solid  #FCE205");
+			   
 			   formsubmit3 = true;
 			   return false;
 			}		
@@ -311,11 +297,9 @@
 			check_name();			
 			check_email();
 		
-			if (formsubmit1==true || formsubmit2==true  || formsubmit2==true )
-			{ 				
-				
-				return false
-								
+			if (formsubmit1==true || formsubmit2==true  || formsubmit3==true )
+			{				
+				return false								
 			}
 			else
 			{	

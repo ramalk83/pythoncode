@@ -35,45 +35,30 @@
 <body>
 	
 	<!-- #header -->
-	<header id="header" class="header header-hide header-border">
+	<header id="header" class="header header-hide">
 		<!-- <div class="container"> -->
 		<div id="logo" class="pull-left" >
 			<h1><a href="#body" class="scrollto"><span class="logo">codePannu</span></a></h1>
 		</div>
-		<nav >
+		<nav>
 			<div class="hamburger" id="menu"  onClick = 'openMenu()'>
 				<div class="line"></div>
 				<div class="line"></div>
 				<div class="line"></div>
 			</div>
-		  
+		
 			<ul class="nav-links" id="menuLink">
-				<li>
-					<a href="#" ><i class="fa fa-home"></i> Home</a></li>
-				<li class="about"><a href="#" >About <i class="fa fa-caret-down" aria-hidden="true" style="transform: rotate(-90deg);"></i></a>
-					<ul>
-						<li>
-						<a href="#">About Us</a>
-						</li>
-						<li>
-							<a href="#">Our Team</a>
-						</li>
-					</ul>
-				</li>
-				<li class="course"><a href="#">Course<i class="fa fa-sort-desc" aria-hidden="true" style="transform: rotate(-90deg);"></i></a>
-					<ul>
-						<li><a href="#">Courses Details</a></li>
-						<li><a href="#">Assignments</a></li>
-					</ul>
-				</li>
-				<li>
-					<a href="#">Contact</a>
-				</li>
-			</ul>
+				<li><a href="#" > Home</a></li>
+			<li class="about"><a href="#" >About <i class="fa fa-caret-down" aria-hidden="true" ></i></a>
+			<ul><li><a href="aboutUs.ejs">About Us</a></li>
+			<li><a href="#">Our Team</a></li></ul></li>
+			<li class="course"><a href="#">Course <i class="fa fa-sort-desc" aria-hidden="true" ></i></a>
+			<ul><li><a href="courses.ejs">Courses Details</a></li>
+			<li><a href="assignments.ejs">Assignments</a></li></ul></li>
+			<li><a href="thankyou.ejs">Contact</a></li></ul>
 		</nav>
 		<!-- </div> -->
 	</header><!-- #header -->
-
 
 
 	<!-- Banner -->
@@ -228,10 +213,7 @@
 				
 			var formsubmit;	
 			
-			/*$("#name").focusout(function(){
-            check_name();
-			 });*/
-			 
+		
 			//check the name is vaild 
 			function check_name() {	
 						
@@ -289,6 +271,7 @@
          }  
 	
 		
+
 		 $( "#message-details" ).submit(function( event ) {	
 			event.preventDefault();
 			
@@ -296,7 +279,7 @@
 			check_message();	 
 			check_name();			
 			check_email();
-		
+		    
 			if (formsubmit1==true || formsubmit2==true  || formsubmit3==true )
 			{				
 				return false								

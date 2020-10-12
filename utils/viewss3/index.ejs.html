@@ -1,0 +1,358 @@
+<!DOCTYPE HTML>
+<!--
+	Typify by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+
+<head>
+	<title>codePannu - Free Python online course for school students</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="main.css" />
+	<link rel="icon" type="image/png" href="images/favicon.ico"/>
+	<link rel="icon" type="image/png" href="images/favicon.ico"/>
+
+	<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /> -->
+	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-179069335-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'UA-179069335-1');
+	</script>
+
+
+
+</head>
+
+<body>
+	
+	<!-- #header -->
+	<header id="header" class="header header-hide header-border">
+		<!-- <div class="container"> -->
+		<div id="logo" class="pull-left" >
+			<h1><a href="#body" class="scrollto"><span class="logo">codePannu</span></a></h1>
+		</div>
+		<nav >
+			<div class="hamburger" id="menu"  onClick = 'openMenu()'>
+				<div class="line"></div>
+				<div class="line"></div>
+				<div class="line"></div>
+			</div>
+		  
+			<ul class="nav-links" id="menuLink">
+				<li>
+					<a href="#" ><i class="fa fa-home"></i> Home</a></li>
+				<li class="about"><a href="#" >About <i class="fa fa-caret-down" aria-hidden="true" style="transform: rotate(-90deg);"></i></a>
+					<ul>
+						<li>
+						<a href="#">About Us</a>
+						</li>
+						<li>
+							<a href="#">Our Team</a>
+						</li>
+					</ul>
+				</li>
+				<li class="course"><a href="#">Course<i class="fa fa-sort-desc" aria-hidden="true" style="transform: rotate(-90deg);"></i></a>
+					<ul>
+						<li><a href="#">Courses Details</a></li>
+						<li><a href="#">Assignments</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">Contact</a>
+				</li>
+			</ul>
+		</nav>
+		<!-- </div> -->
+	</header><!-- #header -->
+
+
+
+	<!-- Banner -->
+	<section id="banner">
+		<h2><strong>We make Coding easy and fun for school students</strong></h2>
+		<p><strong>Check out our free python courses</strong></p>
+		<a href="python-courses" class="button special">Know more</a>
+	</section>
+
+	<!-- One -->
+	<section id="one" class="wrapper special">
+		<div class="inner">
+			<header class="major">
+				<h2>Our Services</h2>
+			</header>
+			<div class="features">
+				<div class="feature">
+					<i class="fa fa-laptop"></i>
+					<h3>Python Courses</h3>
+					<p>We provide 7 day courses in python. The courses are free for all students. <a
+							href="python-courses#two"><b>Click
+								here</b></a> to know more</p>
+				</div>
+				<div class="feature">
+					<i class="fa fa-bullhorn"></i>
+					<h3>How it works</h3>
+					<p>Simple three step process to learn, practise and get support. <a
+							href="python-courses#one"><b>Click here</b></a> to know more</p>
+				</div>
+				<div class="feature">
+					<i class="fa fa-cloud-upload"></i>
+					<h3>Submit assignments</h3>
+					<p>We try our best to correct assignments submitted by all our students. <a
+							href="assignments"><b>Click here</b></a> to submit your assignments</p>
+				</div>
+				<div class="feature">
+					<i class="fa fa-info-circle"></i>
+					<h3>What we do</h3>
+					<p>Our mission is to introduce school students to coding as a fun and exciting activity
+						. <a href="aboutUs"><b>Click here</b></a> to read more</p>
+				</div>
+				<div class="feature">
+					<i class="fa fa-users"></i>
+					<h3>Our Team</h3>
+					<p>We are experienced techiies who want to create next generation tech entrepreneurs. <a
+							href="aboutUs#two"><b>Click here</b></a> to know us</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Two -->
+	<section id="two" class="wrapper style2 special">
+		<div class="inner narrow">
+			<header>
+				<h2>Talk to our team</h2>
+			</header>
+			<form id='message-details' class="grid-form">
+				<div class="form-control narrow">
+					
+					<input name="name" id="name" placeholder="Enter your Name" type="text">
+					<div class="error_form" id="name_error_message"></div>
+				</div>
+				<div class="form-control narrow">
+					
+					<input name="email" id="email" placeholder="Enter your Email" type="text">
+					<div class="error_form" id="email_error_message"></div>
+				</div>
+				<div class="form-control">
+					
+					<textarea name="messagefield" placeholder="Enter your Message" id="messagefield" rows="4"></textarea>
+					<div class="error_form" id="message_error_message"></div>
+				</div>
+				<br/>
+				<ul class="actions">
+					<li><input value="Send Message" type="submit" id="btnSubmit"></li>
+				</ul>
+			</form>
+
+			<div id='confirmation' class='modal-confirmation'>
+				<div class='modal-confirmation-header'>
+					<h6> Confirmation</h6>
+					<a href="#" onClick='closeModal()'>
+						<label for='click' class='fa fa-times'></label>
+					</a>
+				</div>
+				<div class='modal-confirmation-text'>
+					<span> Your message has been sent successfully</span>
+					<div class='div-line'></div>
+					<!-- <label for='click' class='close-btn' onClick='closeModal()'>Close window</label> -->
+					<ul class="actions">
+						<li><input value="close Modal" type="submit" onClick='closeModal()'></li>
+					</ul>
+				</div>
+			</div>
+			<hr />
+		</div>
+	</section>
+
+	<section id="two" class="wrapper special">
+		<div class="inner narrow">
+			<h2>Check us Out</h2>
+			<br>
+			<h4>No 6, Patel Kullappa Street</h4>
+			<h4>M S Nagar post</h4>
+			<h4>Bangalore -560033</h4>
+			<br>
+			<ul class="icons">
+				<li><a href="#" class="icon fa-youtube"><span class="label">Twitter</span></a></li>
+				<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+			</ul>
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<footer id="footer">
+		<div class="copyright">
+			&copy; codePannu. Design: <a href="http://templated.co/">TEMPLATED</a>.
+		</div>
+	</footer>
+
+	<!-- Scripts -->
+	<!-- <script src="assets/js/jquery.min.js"></script> -->
+	<script src="assets/js/jquery-3.5.1.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="assets/js/main1.js"></script>
+	<script language="javascript" type="text/javascript">
+	
+	function openMenu(){
+	  	   const hamburger = document.getElementById("menu");
+	  	   const navLinks = document.getElementById("menuLink");
+      	   navLinks.classList.toggle("open");
+     	}
+	
+	function myFunction() {
+		var x = document.getElementById("myTopnav");
+		if (x.className === "topnav") {
+			x.className += " responsive";
+		} else {
+			x.className = "topnav";
+		}
+	}
+
+	//form validation
+	$( document ).ready(function(){
+		
+			$("#name_error_message").css('display', 'none');
+        	$("#message_error_message").css('display', 'none');
+			$("#email_error_message").css('display', 'none');
+				
+			var formsubmit;	
+			
+			$("#name").focusout(function(){
+            check_name();
+         	});
+			 
+			
+			
+			$("#email").focusout(function() {
+            check_email();
+			});
+			
+		
+			
+			$("#messagefield").focusout(function() {
+			check_message();
+
+			});
+
+			//check the name is vaild 
+			function check_name() {	
+						
+            var fname = $("#name").val();
+            if (fname !== '') {
+			   $("#name_error_message").css('display', 'none');	
+			   $("#name").css("border","");		 
+			   formsubmit1 = false;
+            } else {
+			   $("#name_error_message").html("Enter Your name");			   
+			   $("#name_error_message").css('display', 'block');		
+               $("#name").css("border","2px solid #00b4b5");
+			   formsubmit1 = true;
+			   return false;
+			}
+			
+			
+		 	}
+
+			 //check the message is vaild 
+			function check_message() {
+					
+            var mess = $("#messagefield").val();
+            if (mess !== '') {
+			   $("#message_error_message").css('display', 'none');
+			   $("#messagefield").css("border","");				   		 
+			   formsubmit2 =false;
+			}
+			else {
+               $("#message_error_message").html("Enter your message");
+               $("#message_error_message").css('display', 'block');
+			   $("#messagefield").css("border","2px solid #00b4b5");
+			   formsubmit2 = true;
+			   return false;
+			}		
+						
+		}
+		
+        //check the email vaild
+		function check_email() {
+            var pattern = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+            var email = $("#email").val();
+            if (pattern.test(email) && email !== '') {
+               $("#email_error_message").css('display', 'none');
+			   $("#email").css("border","");	
+			   formsubmit3 = false;
+            } else {
+               $("#email_error_message").html("Enter the vaild email");
+               $("#email_error_message").css('display', 'block');
+			   $("#email").css("border","2px solid #00b4b5");
+			   $("#email").focus("border","2px solid #00b4b5");
+			   formsubmit3 = true;
+			   return false;
+			}		
+					
+         }  
+	
+		
+		 $( "#message-details" ).submit(function( event ) {	
+			event.preventDefault();
+			
+			//$('#btnSubmit').attr("disabled", false);
+			check_message();	 
+			check_name();			
+			check_email();
+		
+			if (formsubmit1==true || formsubmit2==true  || formsubmit2==true )
+			{ 				
+				
+				return false
+								
+			}
+			else
+			{	
+			 
+			   //do your own request an handle the results
+			   var remote = $.ajax({
+			   url: '/message',
+			   type: 'post',
+			   async: false,
+			   dataType: 'application/json',
+			   data: $("#message-details").serialize(),
+			   // success: function (data) {
+			   // 	alert(data)
+			   // }
+		   }).responseText;
+		   if (remote == 'OK') {
+			   $("#confirmation").css("display", "block");
+			   document.getElementById('name').value = ''
+			   document.getElementById('email').value = ''
+			   document.getElementById('messagefield').value = ''
+		   }
+		   else {
+			   alert('Could not send your message, please try again')
+		   }
+		   
+		}//else form validation
+	   })//form
+
+   }) //Document.ready
+	
+	function closeModal() {
+			$("#confirmation").css("display", "none");
+			window.location.reload();			
+	}
+
+	
+	</script>
+</body>
+
+</html>

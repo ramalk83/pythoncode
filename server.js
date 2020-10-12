@@ -13,7 +13,7 @@ var path = require('path')
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ type: 'application/*+json' }));
-
+app.use("/styles/css", express.static(path.join(__dirname, "node_modules/bootstrap/dist/css"))); 
 // app.use(sampleRoutes);
 
 app.use(express.static(path.join(__dirname, 'public')));

@@ -14,7 +14,11 @@
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<link rel="icon" type="image/png" href="images/favicon.ico"/>
 	<link rel="icon" type="image/png" href="images/favicon.ico"/>
-
+	<link href="../node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 	<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /> -->
 	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 
@@ -35,46 +39,55 @@
 <body>
 	
 	<!-- #header -->
-	<header id="header" class="header header-hide header-border">
+
 		<!-- <div class="container"> -->
-		<div id="logo" class="pull-left" >
-			<h1><a href="#body" class="scrollto"><span class="logo">codePannu</span></a></h1>
-		</div>
-		<nav >
-			<div class="hamburger" id="menu"  onClick = 'openMenu()'>
-				<div class="line"></div>
-				<div class="line"></div>
-				<div class="line"></div>
+		
+			
+<nav class="navbar navbar-expand-md navbar-light bg-white fixed-top" >
+
+	<div id="logo" class="pull-left" >
+		<h1><a href="#body" class="scrollto"><span class="logo">codePannu</span></a></h1>
+	</div>
+	
+	<button type="button" class="navbar-toggler bg-light" data-toggle="collapse" data-target="#nav">	
+	<span class="navbar-toggler-icon"></span>	
+	</button>
+	
+	<div class="collapse navbar-collapse justify-content-between" id="nav" >
+	
+	<ul class="navbar-nav">	
+
+	<li class="nav-item" >	
+		<a class="nav-link  font-weight-bold px-3" style="color:#00b4b5" data-target=".navbar-collapse.show" href="aboutUs.ejs">Home</a>	
+	</li>
+	
+	<li class="nav-item dropdown">	
+		<a class="nav-link dropdown-toggle no-border font-weight-bold px-3" style="color:#00b4b5" data-toggle="dropdown" id="Preview" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+			About
+			</a>
+			<div class="dropdown-menu" aria-labelledby="Preview">
+			<a class="dropdown-item font-weight-bold px-3" style="color:#00b4b5" href="aboutUs.ejs">About Us</a>
+			<a class="dropdown-item font-weight-bold px-3" style="color:#00b4b5" href="#">Our  Team</a>
+			
 			</div>
-		  
-			<ul class="nav-links" id="menuLink">
-				<li>
-					<a href="#" ><i class="fa fa-home"></i> Home</a></li>
-				<li class="about"><a href="#" >About <i class="fa fa-caret-down" aria-hidden="true" style="transform: rotate(-90deg);"></i></a>
-					<ul>
-						<li>
-						<a href="#">About Us</a>
-						</li>
-						<li>
-							<a href="#">Our Team</a>
-						</li>
-					</ul>
-				</li>
-				<li class="course"><a href="#">Course<i class="fa fa-sort-desc" aria-hidden="true" style="transform: rotate(-90deg);"></i></a>
-					<ul>
-						<li><a href="#">Courses Details</a></li>
-						<li><a href="#">Assignments</a></li>
-					</ul>
-				</li>
-				<li>
-					<a href="#">Contact</a>
-				</li>
-			</ul>
-		</nav>
-		<!-- </div> -->
-	</header><!-- #header -->
+	</li>
+	
+	<li class="nav-item dropdown">	
+		<a class="nav-link dropdown-toggle font-weight-bold px-3" style="color:#00b4b5"  data-toggle="dropdown" id="Preview1" href="#" role="button" aria-haspopup="true" aria-expanded="false">Course</a>	
+		<div class="dropdown-menu" aria-labelledby="Preview1">
+		<a class="dropdown-item font-weight-bold px-3" style="color:#00b4b5" href="courses.ejs"  >Courses Details</a>	
+		<a class="dropdown-item font-weight-bold px-3" style="color:#00b4b5" href="assignments.ejs" data-target=".navbar-collapse.show" >Assignments</a>
+		</div>	
+	</li>
 
-
+	<li class="nav-item">
+		<a class="nav-link  font-weight-bold px-3" style="color:#00b4b5" data-target=".navbar-collapse.show"   href="thankyou.ejs">Contact</a>
+	</li>	
+	</ul>
+		
+	</div>
+</nav>
+	
 
 	<!-- Banner -->
 	<section id="banner">
@@ -200,6 +213,7 @@
 	<script src="assets/js/jquery-3.5.1.min.js"></script>
 	<script src="assets/js/skel.min.js"></script>
 	<script src="assets/js/util.js"></script>
+	<script src="../node_modules/bootstrap/dist/js/bootstrap.js" type="text/javascript"></script>
 	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 	<script src="assets/js/main.js"></script>
 	<script language="javascript" type="text/javascript">
@@ -228,59 +242,42 @@
 				
 			var formsubmit;	
 			
-			$("#name").focusout(function(){
-            check_name();
-         	});
-			 
-			
-			
-			$("#email").focusout(function() {
-            check_email();
-			});
-			
 		
-			
-			$("#messagefield").focusout(function() {
-			check_message();
-
-			});
-
 			//check the name is vaild 
 			function check_name() {	
 						
-            var fname = $("#name").val();
-            if (fname !== '') {
-			   $("#name_error_message").css('display', 'none');	
-			   $("#name").css("border","");		 
-			   formsubmit1 = false;
-            } else {
-			   $("#name_error_message").html("Enter Your name");			   
-			   $("#name_error_message").css('display', 'block');		
-               $("#name").css("border","2px solid #00b4b5");
-			   formsubmit1 = true;
-			   return false;
-			}
-			
+				var fname = $("#name").val();
+				if (fname !== '') {
+				$("#name_error_message").css('display', 'none');	
+				$("#name").css("border","");		 
+				formsubmit1 = false;
+				} else {
+				$("#name_error_message").html("Enter Your name");			   
+				$("#name_error_message").css('display', 'block');		
+				$("#name").css("border","2px solid  #FCE205");
+				formsubmit1 = true;
+				return false;
+				}			
 			
 		 	}
 
 			 //check the message is vaild 
 			function check_message() {
 					
-            var mess = $("#messagefield").val();
-            if (mess !== '') {
-			   $("#message_error_message").css('display', 'none');
-			   $("#messagefield").css("border","");				   		 
-			   formsubmit2 =false;
-			}
-			else {
-               $("#message_error_message").html("Enter your message");
-               $("#message_error_message").css('display', 'block');
-			   $("#messagefield").css("border","2px solid #00b4b5");
-			   formsubmit2 = true;
-			   return false;
-			}		
-						
+				var mess = $("#messagefield").val();
+				if (mess !== '') {
+				$("#message_error_message").css('display', 'none');
+				$("#messagefield").css("border","");				   		 
+				formsubmit2 =false;
+				}
+				else {
+				$("#message_error_message").html("Enter your message");
+				$("#message_error_message").css('display', 'block');
+				$("#messagefield").css("border","2px solid  #FCE205");
+				formsubmit2 = true;
+				return false;
+				}		
+							
 		}
 		
         //check the email vaild
@@ -294,8 +291,8 @@
             } else {
                $("#email_error_message").html("Enter the vaild email");
                $("#email_error_message").css('display', 'block');
-			   $("#email").css("border","2px solid #00b4b5");
-			   $("#email").focus("border","2px solid #00b4b5");
+			   $("#email").css("border","2px solid  #FCE205");
+			   
 			   formsubmit3 = true;
 			   return false;
 			}		
@@ -303,6 +300,7 @@
          }  
 	
 		
+
 		 $( "#message-details" ).submit(function( event ) {	
 			event.preventDefault();
 			
@@ -310,12 +308,10 @@
 			check_message();	 
 			check_name();			
 			check_email();
-		
-			if (formsubmit1==true || formsubmit2==true  || formsubmit2==true )
-			{ 				
-				
-				return false
-								
+		    
+			if (formsubmit1==true || formsubmit2==true  || formsubmit3==true )
+			{				
+				return false								
 			}
 			else
 			{	

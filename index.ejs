@@ -44,11 +44,9 @@
 		
 			
 <nav class="navbar navbar-expand-md navbar-light bg-white fixed-top" >
-
-	<div id="logo" class="pull-left" >
-		<h1><a href="#body" class="scrollto"><span class="logo">codePannu</span></a></h1>
-	</div>
 	
+
+	<a class="navba" href="index.html">codePannu</a>	
 	<button type="button" class="navbar-toggler bg-light" data-toggle="collapse" data-target="#nav">	
 	<span class="navbar-toggler-icon"></span>	
 	</button>
@@ -233,8 +231,16 @@
 		}
 	}
 
+
 	//form validation
 	$( document ).ready(function(){
+
+		//close navbar if click outside
+		$(document).click(function (e) {  
+			if($('.collapse').hasClass('show') && !$('nav').is(e.target) && $('nav').has(e.target).length === 0){
+				$('.navbar-toggler').click()
+			}
+		})
 		
 			$("#name_error_message").css('display', 'none');
         	$("#message_error_message").css('display', 'none');

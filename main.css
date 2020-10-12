@@ -195,6 +195,9 @@
 
 	@media screen and (max-width: 1680px) {
 
+		.navbar-nav .nav-item{
+			padding-right:40px;
+		}
 		.container.\31 25\25 {
 			width: 100%;
 			max-width: 100em;
@@ -226,7 +229,9 @@
 			max-width: 81.25em;
 			min-width: 65em;
 		}
-
+		.navbar-nav .nav-item{
+			padding-right:40px;
+		}
 		.container.\37 5\25 {
 			width: 48.75em;
 		}
@@ -1231,7 +1236,9 @@
 		.row > * {
 			padding: 0 0 0 1.25em;
 		}
-
+        .headborder{
+			border-bottom: solid 2px lightgray;
+		}
 		.row {
 			margin: 0 0 -1px -1.25em;
 		}
@@ -4287,14 +4294,35 @@ box-shadow: 0 2px 12px 0 rgba(0,0,0,0.4);
 	color:#00b4b5;
 }
 
-.navbar .navbar-collapse .dropdown-menu .dropdown-item:hover{
+
+.navba{
+	color:black;
+	
+	font-stretch: semi-condensed;
+	background-color:rgb(10, 75, 150);
+	border-radius: 7px;
+	border:solid 2px rgb(243, 205, 36);
+	font-size:19px;
+	padding:8px;
+	letter-spacing:2px;
+	color:rgb(243, 205, 36);
+	font-family: "Raleway", Arial, Helvetica, sans-serif;	
+	font-weight: bold;	
+	text-decoration: none !important;
+
+}
+
+
+   
+/* change the color of active or hovered links */
+.navbar-nav .nav-item.active .nav-link,
+.navbar-nav .nav-item:hover .nav-link,
+.dropdown-menu a:hover,
+.dropdown:hover>.dropdown-menu>a:hover{
 	background-color: rgb(238, 238, 237);
 }
 
-.navbar .navbar-collapse .dropdown-menu .dropdown-item:active{
-	background-color: rgb(238, 238, 237);
-}
+
 .navbar{
-
 color:#00b4b5;
 }

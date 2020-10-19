@@ -13,12 +13,7 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-	<link rel="stylesheet" href="assets/css/main.css" />
-	<link rel="icon" type="image/png" href="images/favicon.ico"/>
-	<link rel="icon" type="image/png" href="images/favicon.ico"/>
-
-	<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /> -->
-	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+	<link rel="stylesheet" href="main.css" />
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-179069335-1"></script>
@@ -35,10 +30,46 @@
 </head>
 
 <body>
-	
-	<!-- #header -->
-	<%- include ('header') -%>
-	<div onClick = 'openMenu()'>
+	<header id="header" class="header header-hide header-border">
+		<!-- <div class="container"> -->
+		<div id="logo" class="pull-left" >
+			<h1><span><a style="color:rgb(243, 205, 36)" class="navba" href="/">codePannu</a>	</span></h1>
+		</div>
+		<nav >
+			<div class="hamburger" id="menu"  onClick = 'openMenu()'>
+				<div class="line"></div>
+				<div class="line"></div>
+				<div class="line"></div>
+			</div>
+		  
+			<ul class="nav-links" id="menuLink">
+				<li>
+					<a href="index.ejs.html" > Home</a></li>
+				<li class="about"><a href="#" >About <i class="fa fa-caret-down" aria-hidden="true" style="transform: rotate(-90deg);"></i></a>
+					<ul>
+						<li>
+						<a href="aboutUs.ejs.html">About Us</a>
+						</li>
+						<li>
+							<a href="#">Our Team</a>
+						</li>
+					</ul>
+				</li>
+				<li class="course"><a href="#">Course<i class="fa fa-sort-desc" aria-hidden="true" style="transform: rotate(-90deg);"></i></a>
+					<ul>
+						<li><a href="courses.ejs.html">Courses Details</a></li>
+						<li><a href="assignments.ejs.html">Assignments</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="thankyou.ejs.html">Contact</a>
+				</li>
+			</ul>
+		</nav>
+		<!-- </div> -->
+	</header><!-- #header -->
+
+
 	<!-- Quote -->
 	<section id="banner-quote">
 		<p><b>Python Course - Level One</b></p>
@@ -157,7 +188,7 @@
 			&copy; codePannu. Design: <a href="http://templated.co/">TEMPLATED</a>.
 		</div>
 	</footer>
-</div>
+
 	<!-- Scripts -->
 	<script src="assets/js/jquery.min.js"></script>
 	<script src="assets/js/skel.min.js"></script>

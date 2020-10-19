@@ -9,14 +9,12 @@
 <head>
 	<title>codePannu - Free Python online course for school students</title>
 	<link rel="icon" type="image/png" href="images/favicon.ico"/>
-	<link rel="icon" type="image/png" href="images/favicon.ico"/>
+
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 	<link rel="stylesheet" href="main.css" />
-	<!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"> -->
-	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-
+		
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-179069335-1"></script>
 	<script>
@@ -32,20 +30,45 @@
 </head>
 
 <body>
-
-	<!-- #header -->
-	<header id="header" class="header header-hide">
-		<div class="container">
-			<div id="logo" class="pull-left">
-				<h1><a href="/" class="scrollto"><span>codePannu</span></a></h1>
-			</div>
-			<div style="float:right; padding:5px; font-size:30px">
-				<a href="/"><i class="fa fa-home"></i></a></div>
+	
+	<header id="header" class="header header-hide header-border">
+		<!-- <div class="container"> -->
+		<div id="logo" class="pull-left" >
+			<h1><span><a style="color:rgb(243, 205, 36)" class="navba" href="/">codePannu</a>	</span></h1>
 		</div>
+		<nav >
+			<div class="hamburger" id="menu"  onClick = 'openMenu()'>
+				<div class="line"></div>
+				<div class="line"></div>
+				<div class="line"></div>
+			</div>
+		  
+			<ul class="nav-links" id="menuLink">
+				<li>
+					<a href="index.ejs.html" > Home</a></li>
+				<li class="about"><a href="#" >About <i class="fa fa-caret-down" aria-hidden="true" style="transform: rotate(-90deg);"></i></a>
+					<ul>
+						<li>
+						<a href="aboutUs.ejs.html">About Us</a>
+						</li>
+						<li>
+							<a href="#">Our Team</a>
+						</li>
+					</ul>
+				</li>
+				<li class="course"><a href="#">Course<i class="fa fa-sort-desc" aria-hidden="true" style="transform: rotate(-90deg);"></i></a>
+					<ul>
+						<li><a href="courses.ejs.html">Courses Details</a></li>
+						<li><a href="assignments.ejs.html">Assignments</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="thankyou.ejs.html">Contact</a>
+				</li>
+			</ul>
+		</nav>
+		<!-- </div> -->
 	</header><!-- #header -->
-
-
-
 
 	<!-- Quote -->
 	<section id="banner-quote">
@@ -151,6 +174,20 @@
 	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 	<script src="assets/js/main.js"></script>
 	<script language="javascript" type="text/javascript">
+	function openMenu(){
+	  	   const hamburger = document.getElementById("menu");
+	  	   const navLinks = document.getElementById("menuLink");
+      	   navLinks.classList.toggle("open");
+     	}
+	
+	function myFunction() {
+		var x = document.getElementById("myTopnav");
+		if (x.className === "topnav") {
+			x.className += " responsive";
+		} else {
+			x.className = "topnav";
+		}
+	}
 
 //form validation
 	
@@ -163,30 +200,7 @@ $( document ).ready(function(){
 
 			var formsubmit;	
 						
-			$("#name").focusout(function(){
-            check_name();
-         	});			 
 			
-			$("#email").focusout(function() {
-            check_email();
-			});			
-				
-			$("#answer1").focusout(function() {
-			check_answer();
-			});
-			$("#level").blur(function() {
-			check_level();
-			});
-			$("#level").click(function() {
-			check_level();
-			});			
-			$("#day").blur(function() {
-			check_day();
-			});
-			$("#day").click(function() {
-			check_day();
-			});
-
 			//check the name is vaild 
 			function check_name() {
             var fname = $("#name").val();
@@ -197,7 +211,7 @@ $( document ).ready(function(){
             } else {
                $("#name_error_message").html("Enter Your name");
                $("#name_error_message").show();
-               $("#name").css("border","2px solid #00b4b5");
+               $("#name").css("border","2px solid  #FCE205");
                formsubmit1 = true;
 			}			
 			
@@ -214,7 +228,7 @@ $( document ).ready(function(){
 			else {
                $("#answer_error_message").html("Enter your message");
                $("#answer_error_message").show();
-               $("#answer1").css("border","2px solid #00b4b5");
+               $("#answer1").css("border","2px solid  #FCE205");
 			   formsubmit2 = true;
 			}
 			
@@ -232,8 +246,8 @@ $( document ).ready(function(){
             } else {
                $("#email_error_message").html("Enter the vaild email");
                $("#email_error_message").show();
-			   $("#email").css("border","2px solid #00b4b5");
-			   $("#email").focus("border","2px solid #00b4b5");
+			   $("#email").css("border","2px solid  #FCE205");
+			  
                formsubmit3 = true;
 			}					
 			
@@ -252,7 +266,7 @@ $( document ).ready(function(){
 			else {
                $("#level_error_message").html("Enter the level");
                $("#level_error_message").show();
-               $("#level").css("border","2px solid #00b4b5");
+               $("#level").css("border","2px solid  #FCE205");
 			   formsubmit4 = true;
 			}		
 						
@@ -270,7 +284,7 @@ $( document ).ready(function(){
 			else {
                $("#day_error_message").html("Enter the day");
                $("#day_error_message").show();
-               $("#day").css("border","2px solid #00b4b5");
+               $("#day").css("border","2px solid  #FCE205");
 			   formsubmit5 = true;
 			}
 			

@@ -37,6 +37,7 @@ exports.dispatchEmail = async function (assignmentObj) {
     
     
       <style type="text/css">
+      
       /* Take care of image borders and formatting */
     
       img { max-width: 600px; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic;}

@@ -7,7 +7,6 @@ const sqlDS = require('./store/sqlDataStore');
 const email=require('./utils/emailDispatch');
 const app = express();
 var path = require('path')
-var PORT= procss.env.PORT || 3000
 
 // const sampleRoutes = require('./routes/sampleRoutes');
 app.set("view engine", "ejs");
@@ -166,9 +165,8 @@ app.use(function (req, res) {
   res.render(__dirname + '/views/error');
 });
 
-//app.listen(Constants.Server.PORT, () => {
-  app.listen(PORT, () => {
-    //console.log("Node Server started at " + Constants.Server.PORT + ", waiting for requests....");
-    console.log("Node Server started at " + PORT + ", waiting for requests....");
+app.listen(Constants.Server.PORT, () => {
+    console.log("Node Server started at " + Constants.Server.PORT + ", waiting for requests....");
+
 
 });

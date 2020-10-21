@@ -4,7 +4,7 @@ hmc(
   {
     // server related constants
     Server: {
-      PORT: procss.env.PORT || 3000
+      PORT: process.env.PORT || 3000
     },
 
     //Email constants

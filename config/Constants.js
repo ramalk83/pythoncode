@@ -10,9 +10,9 @@ hmc(
     //Email constants
     Email: {
 
-      EMAIL_SECRET: '',
-      USER: '',
-      PASS: '',
+      EMAIL_SECRET: 'asdf1093KMnzxcvnkljvasdu09123nlasdasdf',
+      USER: 'codepannu@gmail.com',
+      PASS: '#Cut3andCod3',
     },
 
     // response related constants

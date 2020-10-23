@@ -110,9 +110,12 @@
     @media screen and (max-width: 768px){
 		nav ul ul{
 			position: absolute;
-			top:80px;
+			top:60px;
 			margin-left: 0px;
 			width:100%;		
+		}
+		nav ul{
+			margin-top:20px;
 		}
 		nav{
 			padding-bottom:10px;

@@ -96,7 +96,7 @@
 	nav ul ul li{
 		width: 200px;
 		float: none;
-		display: block;
+		display: bl;
 		position: relative;
 		justify-items: left;
 		font-size:14px
@@ -116,7 +116,10 @@
 		}
 		nav{
 			padding-bottom:10px;
+			height: 16vh;
 		}
+
+	
 		#header{
 			padding-bottom:10px;
 		}
@@ -4223,8 +4226,7 @@
 			}
 
 			#header {
-				height: 88px !important;
-				background: rgb(124, 42, 42);
+				height: 68px !important;
 			}
 
 

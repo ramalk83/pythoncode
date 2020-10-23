@@ -2737,15 +2737,12 @@
 		}
 
 		@media screen and (max-width: 1280px) {
-
 			header.major {
 				margin-bottom: 2em;
 			}
-
 		}
 
 		@media screen and (max-width: 736px) {
-
 			header.major {
 				margin-bottom: 1.5em;
 			}
@@ -4028,7 +4025,7 @@
 	left: 0;
 	top: 0;
 	right: 0;
-	height: 48px;
+	height: 58px;
 	z-index: 3;
 	transition: all 0.5s ease;
   }

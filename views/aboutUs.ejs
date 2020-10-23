@@ -142,7 +142,8 @@
 			
 	function openMenu(){
 	  	   const hamburger = document.getElementById("menu");
-	  	   const navLinks = document.getElementById("menuLink");
+		   const navLinks = document.getElementById("menuLink");
+			 
       	   navLinks.classList.toggle("open");
      	}
 	
@@ -158,7 +159,7 @@
 	
 		//close navbar if click outside
 		$(document).click(function (e) {  
-			if($('.collapse').hasClass('show') && !$('nav').is(e.target){
+			if($('.collapse').hasClass('show') && !$('nav').is(e.target) && $('nav').has(e.target).length === 0){
 				$('.navbar-toggler').click()
 			}
 		})

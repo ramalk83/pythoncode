@@ -186,7 +186,7 @@
 		}
 		.about:hover, .course:hover {
 			 width: 100%;		   
-			 display: grid;			
+			 display: block;			
 			 position: relative;
 			 margin-bottom: 130px;
 			 justify-items: left;		

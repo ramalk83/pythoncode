@@ -96,7 +96,7 @@
 	nav ul ul li{
 		width: 200px;
 		float: none;
-		display: list-item;
+		display: block;
 		position: relative;
 		justify-items: left;
 		font-size:14px

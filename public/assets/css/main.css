@@ -153,11 +153,11 @@
 			position: absolute;
 			background: white;
 			height: 60vh;
-			width: 100%;
-			margin-top: 60px;
+			width: 60%;
+			margin-top: 30px;
 			flex-direction: column;
 			justify-content: flex-start;
-			right: -20%;			
+			right: -70%;			
 			clip-path: circle(100px at 90% -10%);
 			-webkit-clip-path: circle(100px at 90% -10%);
 			transition: all 1s ease-out;
@@ -166,7 +166,8 @@
 			
 		}
 		.nav-links li {
-			background:white;			
+			background:white;
+			
 			position: relative;
 			list-style: none;
 			display: grid;
@@ -180,9 +181,9 @@
 			list-style: none;			
 			cursor: pointer;
 			display: grid;
-			margin-top:10px;		     
+			margin-top:10px;
+		     
 		}
-		
 		.about:hover, .course:hover {
 			 width: 100%;		   
 			 display: grid;			

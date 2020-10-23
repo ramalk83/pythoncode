@@ -184,14 +184,14 @@
 			margin-top:10px;
 		     
 		}
-		.about:hover, .course:hover {
+		/*.about:hover, .course:hover {
 			 width: 100%;		   
 			 display: grid;			
 			 position: relative;
 			 margin-bottom: 130px;
-			 justify-items: left;		
+			 justify-items: left;	
 			
-		}
+		}*/
         
 		.open {
 			

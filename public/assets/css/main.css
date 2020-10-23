@@ -184,21 +184,19 @@
 			margin-top:10px;
 		     
 		}
-		/*.about:hover, .course:hover {
+		.about:hover, .course:hover {
 			 width: 100%;		   
 			 display: grid;			
 			 position: relative;
 			 margin-bottom: 130px;
-			 justify-items: left;	
+			 justify-items: left;		
 			
-		}*/
+		}
         
-		.open {
-			
+		.open {			
 			clip-path: circle(1000px at 70% -30%);
 			-webkit-clip-path: circle(1000px at 70% -30%);
-			right: 0%;
-			
+			right: 0%;			
 		}
 	}
 	blockquote, q {

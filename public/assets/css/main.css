@@ -4030,7 +4030,7 @@
 	left: 0;
 	top: 0;
 	right: 0;
-	height: 58px;
+	height: 48px;
 	z-index: 3;
 	transition: all 0.5s ease;
   }
@@ -4226,6 +4226,11 @@
 			#banner-quote {
 				padding: 3em 1em 1em 1em;
 			}
+
+			#header {
+				height: 68px !important;
+			}
+
 
 			#banner-quote h2 {
 					font-size: 1.65em;

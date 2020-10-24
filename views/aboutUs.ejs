@@ -39,7 +39,7 @@
 	<!-- #header -->
 	<%- include ('header') -%>
 
-	<div onClick = 'openMenu()'>
+	<div onClick = 'openMenu1()'>
 	<!-- Quote -->
 	<section id="banner-quote">
 		<p><b>Code Pannu translates to 'write code' in Tamil</b></p>
@@ -138,33 +138,7 @@
 	<script src="assets/js/util.js"></script>
 	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 	<script src="assets/js/main.js"></script>
-	<script>
-			
-	function openMenu(){
-	  	   const hamburger = document.getElementById("menu");
-		   const navLinks = document.getElementById("menuLink");			 
-      	   navLinks.classList.toggle("open");
-     	}
 	
-	function myFunction() {
-		var x = document.getElementById("myTopnav");
-		if (x.className === "topnav") {
-			x.className += " responsive";
-		} else {
-			x.className = "topnav";
-		}
-	}
-	$( document ).ready(function(){
-	
-		//close navbar if click outside
-		$(document).click(function (e) {  
-			if($('.collapse').hasClass('show') && !$('nav').is(e.target) && $('nav').has(e.target).length === 0){
-				$('.navbar-toggler').click()
-			}
-		})
-	
-	})
-	</script>
 </body>
 
 </html>

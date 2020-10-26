@@ -43,22 +43,20 @@
 	
 	}
 
-
 	.nav-links {
 		display: inline-flex;
 		list-style: none;
 		width: 70%;
 		height: 100%;
 		justify-content: left;		
-		align-items: left;		
-		
+		align-items: left;	
 		}
+		
 		.nav-links li {
 			background:white;
 			position: relative;
 			list-style: none;
-			display: inline-block;
-			
+			display: inline-block;			
 		}
 
 	.nav-links li a {
@@ -115,24 +113,18 @@
     @media screen and (max-width: 768px){
 	
 		nav ul ul li{			
-				display: none;			
+			display: none;			
 		}	
-		
-		nav ul li:hover {
-			display: block;
-		}
-		
-		nav ul ul{
-			position: absolute;
-			top:30px ;
+
+	
+			
+		nav ul ul{		
+			top:50px ;
 			margin-left: 0px;
 			width:100%;		
 		}
 	
-		nav{
-			padding-bottom:5px;
-			height: 14vh;
-		}
+	
 
 	
 		#header{
@@ -156,20 +148,43 @@
 			background: black;
 			margin: 5px;
 		}
-		.about:hover, .course:hover {
-			width: 100%;		   
-			display: block;		
-			height:40%;
-			margin-bottom: 30px;
-			justify-items: left;		
-			background-color:white !important;
-	   } 
-	   .about, .course{
-		   display:none;
-		   background-color:white;
-	   }
-	   
+
+		.about, .course {
+			width: 100%; 
+						
 		
+			background-color:rgb(255, 255, 255) !important;
+	   } 
+	    ul li ul li {
+		clear: both;
+		width: 100%;
+	  }
+	   .about:hover, .course:hover {
+		position: relative;
+		height:220px !important;
+		display: inline-block !important;
+   } 
+   
+	   
+	   .about a:hover, .course a:hover{	  
+	
+		
+			justify-items: left;
+			display: inline-block !important;	
+		   }
+	   
+		.about1 li a,.course1 li a{
+			line-height: 40px !important;
+		}
+
+		.course1 li {
+			margin-top:5px;
+			margin-bottom:20px;
+		}
+		.about1 li {
+			margin-top:5px;			
+			margin-bottom:10px;
+		}
 		.hamburger{
 			position: absolute;
 			cursor: pointer;
@@ -186,7 +201,7 @@
 			width: 70%;
 			margin-top: 75px;
 			flex-direction: column;
-			justify-content: flex-start;
+			justify-content: flex;
 			right: -70%;
 			margin-top:24%;
 			clip-path: circle(100px at 90% -10%);
@@ -196,26 +211,8 @@
 			border-top: solid 1px lightgray;
 			
 		}
-		.nav-links li {
-			background:white;
-			
-			position: relative;
-			list-style: none;
-			display: grid;
-			padding-right: 100%;			
-			margin-right: auto;					
-		}
-		
-		
-		nav ul ul li {
-			position: relative;			
-			list-style: none;			
-			cursor: pointer;
-			display: grid;
-			margin-top:15px;
-		     
-		}
 	
+
         
 		.open {			
 			clip-path: circle(1000px at 70% -30%);

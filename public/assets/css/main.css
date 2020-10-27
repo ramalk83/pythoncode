@@ -38,7 +38,8 @@
 		border-color: #FCE205;
 		height: 10vh;		
 		background:white;	
-	    margin-top:0px;
+		margin-top:0px;
+		padding-bottom:10px;
 		justify-content: center;
 	
 	}
@@ -124,7 +125,8 @@
 		}
 
 		nav {
-			height:11vh
+			height:13vh;
+			
 		}
 
 	

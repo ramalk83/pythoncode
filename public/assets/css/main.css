@@ -117,14 +117,15 @@
 		}	
 
 	
-			
 		nav ul ul{		
 			top:50px ;
 			margin-left: 0px;
 			width:100%;		
 		}
-	
-	
+
+		nav {
+			height:11vh
+		}
 
 	
 		#header{
@@ -150,10 +151,8 @@
 		}
 
 		.about, .course {
-			width: 100%; 
-						
-		
-			background-color:rgb(255, 255, 255) !important;
+			width: 100%; 				
+		   background-color:rgb(255, 255, 255) !important;
 	   } 
 	    ul li ul li {
 		clear: both;
@@ -166,8 +165,7 @@
    } 
    
 	   
-	   .about a:hover, .course a:hover{	  
-	
+	   .about a:hover, .course a:hover{	 	
 		
 			justify-items: left;
 			display: inline-block !important;	
@@ -199,11 +197,11 @@
 			background: white;
 			height: 80vh;
 			width: 70%;
-			margin-top: 75px;
+			margin-top: 11vh;
 			flex-direction: column;
 			justify-content: flex;
 			right: -70%;
-			margin-top:24%;
+		
 			clip-path: circle(100px at 90% -10%);
 			-webkit-clip-path: circle(100px at 90% -10%);
 			transition: all 1s ease-out;

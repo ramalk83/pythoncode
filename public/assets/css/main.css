@@ -204,7 +204,7 @@
 			flex-direction: column;
 			justify-content: flex;
 			right: -70%;
-		
+		  opacity: 0.5;
 			clip-path: circle(100px at 90% -10%);
 			-webkit-clip-path: circle(100px at 90% -10%);
 			transition: all 1s ease-out;

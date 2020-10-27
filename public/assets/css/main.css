@@ -39,7 +39,7 @@
 		height: 10vh;		
 		background:white;	
 		margin-top:0px;
-		padding-bottom:10px;
+		
 		justify-content: center;
 	
 	}
@@ -126,7 +126,7 @@
 
 		nav {
 			height:13vh;
-			
+			padding-bottom:10px;
 		}
 
 	
@@ -160,14 +160,15 @@
 		clear: both;
 		width: 100%;
 	  }
+
 	   .about:hover, .course:hover {
 		position: relative;
 		height:220px !important;
 		display: inline-block !important;
-   } 
+   		} 
    
 	   
-	   .about a:hover, .course a:hover{	 	
+	   .about a:hover, .course a:hover{ 	
 		
 			justify-items: left;
 			display: inline-block !important;	
@@ -199,7 +200,7 @@
 			background: white;
 			height: 80vh;
 			width: 70%;
-			margin-top: 11vh;
+			margin-top: 13vh;
 			flex-direction: column;
 			justify-content: flex;
 			right: -70%;

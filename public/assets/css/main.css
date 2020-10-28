@@ -163,7 +163,7 @@
 
 	   .about:hover, .course:hover {
 		position: relative;
-		height:220px !important;
+		height:140px !important;
 		display: block !important;
    		} 
    
@@ -175,16 +175,20 @@
 		   }
 	   
 		.about1 li a,.course1 li a{
-			line-height: 40px !important;
+			line-height: 19px !important;
 		}
 
 		.course1 li {
-			margin-top:5px;
-			margin-bottom:20px;
+			margin-top:0px;
+			margin-bottom:15px;
 		}
-		.about1 li {
-			margin-top:5px;			
-			margin-bottom:10px;
+		.about1{
+			margin-top:10px;			
+			margin-bottom:5px;
+		}
+		.about1 li{
+				
+			margin-bottom:20px;
 		}
 		.hamburger{
 			position: absolute;

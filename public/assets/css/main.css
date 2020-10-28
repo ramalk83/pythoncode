@@ -177,7 +177,9 @@
 		.about1 li a,.course1 li a{
 			line-height: 25px !important;
 		}
-
+       .aboutus{
+		margin-bottom:10px;
+	   }
 		.course1 li {
 			margin-top:5px;
 			margin-bottom:20px;

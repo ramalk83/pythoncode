@@ -184,12 +184,12 @@
 		}
 		.about1{
 			margin-top:10px;			
-			margin-bottom:5px;
+			margin-bottom:0px;
 		}
-		.about1 li{
-				
-			margin-bottom:20px;
+		.about1 li{				
+			margin-bottom:25px;
 		}
+
 		.hamburger{
 			position: absolute;
 			cursor: pointer;

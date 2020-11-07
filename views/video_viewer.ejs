@@ -25,56 +25,74 @@
 
 		gtag('config', 'UA-179069335-1');
 	</script>
+	<style>
 
+	@media screen and (min-width: 768px) {
+		.parent{
+			display: flex;
+		}
+		.child1{
+			width:40%;
+			float:left;
+		
+			overflow-y: auto;
+           max-height: 700px;
+		}
+		.child{
+			width:60%;
+			
+			
+		}
+	}
+	@media screen and (max-width: 768px) {
+		.parent{
+			display: block;
+		}
+	}
+	</style>
 
 
 </head>
 
 <body>
 
-	<!-- #header -->
-	<header id="header" class="header header-hide">
-		<div class="container">
-			<div id="logo" class="pull-left">
-				<h1><a href="/" class="scrollto"><span>codePannu</span></a></h1>
-			</div>
-			<div style="float:right; padding:5px; font-size:30px">
-				<a href="/"><i class="fa fa-home"></i></a></div>
-		</div>
-	</header><!-- #header -->
 
-
-
+	<%- include ('header') -%>
+	<!-- Banner -->
+	<div id="pageclk" >
 
 	<!-- Quote -->
 	<section id="banner-quote-video">
 		<p><b>Python Course - Level One</b></p>
 	</section>
-
+<section class="parent">
 	<!-- One -->
-	<section id="two" class="wrapper style2 special">
+	<section id="two" class="wrapper  special child">
 		<div class="inner narrow">
 			<header>
 				<h3 id='videoTitle'><%- data[0].title %></h3>
 				<!-- <p></p> -->
 			</header>
 
-			<div class='iframe-wrapper'>
+			
+			<div class="outer">
+				<div class='iframe-wrapper'>
 				<iframe id="youTubeframe" src="<%- data[0].embed_url %>"
 					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 					allowfullscreen></iframe>
 
-					<div>
-						<a href="#" id="prevClick" name="<%- data[0].id %>" onClick="loadVideo(id, name)"><i
-								class="fa fa-chevron-circle-left" aria-hidden="true"></i></a>
-						<a href="#" id="nextClick" name="<%- data[0].id %>" onClick="loadVideo(id, name)"><i
-								class="fa fa-chevron-circle-right" aria-hidden="true"></i></a>
-					</div>
+					
 			</div>
+		      <div>
+				<a href="#" id="prevClick" name="<%- data[0].id %>" onClick="loadVideo(id, name)"><i
+						class="fa fa-chevron-circle-left" aria-hidden="true"></i></a>
+				<a href="#" id="nextClick" name="<%- data[0].id %>" onClick="loadVideo(id, name)"><i
+						class="fa fa-chevron-circle-right" aria-hidden="true"></i></a>
+			</div>
+		</div>
 
 			<div>
-				<header>
-				</header>
+				
 			</div>
 
 			
@@ -86,20 +104,24 @@
 		</div>
 	</section>
 
-	<section id="two" class="wrapper special">
+	<section id="two" class="wrapper special child1">
 		<div class="inner narrow">
 			<header style='text-align: left;'>
 				<h3><b>7 day python level one course</b></h3>
 				<!-- <p> </p> -->
 			</header>
-			<dl style='text-align: left;' id='videoListing'>
+
+
+			<dl class="dropdown" style='text-align: left;' id='videoListing'>
 				<% for(var j=0; j < uniqueDays ; j++) {%>
-				<dt>Day <%- j %></dt>
+				<dt class="day">Day <%- j %></dt>
 				<% for(var i=0; i < data.length ; i++) {%>
 				<% if(data[i].day==j) {%>
 				<dd id="<%- data[i].id %>">
-					<p><a href="#" id="link-access" name="<%- data[i].id %>"
-							onClick="loadVideo(id, name)"><b><%- data[i].title %></b></a></p>
+					<ul style="z-index: 1000; ">
+					<li><a href="#" id="link-access" name="<%- data[i].id %>"
+							onClick="loadVideo(id, name)"><b><%- data[i].title %></b></a></li>
+						</ul>
 				</dd>
 				<% } %>
 				<% } %>
@@ -108,7 +130,10 @@
 
 			<!-- </div> -->
 		</div>
+	
 	</section>
+</section>
+</div>
 
 	<!-- Footer -->
 	<footer id="footer">
@@ -124,7 +149,14 @@
 	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 	<script src="assets/js/main.js"></script>
 	<script>
+
+		/*$(".dropdown dt").click(function() {
+			alert("dsfds")
+			$(this).next('ul').toggle();
+		});*/
+
 		function loadVideo(id, name) {
+
 			$('i.fa').off('click');
 			$(document).on('click', "i.fa, a", function () {
 				console.log('fucntion invoked')
